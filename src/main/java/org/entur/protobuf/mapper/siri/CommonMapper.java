@@ -285,7 +285,7 @@ public class CommonMapper extends EnumerationMapper{
 
     private static uk.org.siri.www.siri.DataFrameRefStructure.Builder map(DataFrameRefStructure dataFrameRef) {
         return uk.org.siri.www.siri.DataFrameRefStructure.newBuilder()
-                .setValue(dataFrameRef.getValue());
+                .setValue(dataFrameRef == null ? "" : dataFrameRef.getValue());
     }
 
 
