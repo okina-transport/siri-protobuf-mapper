@@ -1,14 +1,7 @@
 package org.entur.protobuf.mapper;
 
-import org.entur.protobuf.mapper.siri.CommonMapper;
-import org.entur.protobuf.mapper.siri.EstimatedTimetableSiri2PbfMapper;
-import org.entur.protobuf.mapper.siri.SituationExchangeSiri2PbfMapper;
-import org.entur.protobuf.mapper.siri.VehicleMonitoringSiri2PbfMapper;
-import uk.org.siri.siri20.EstimatedTimetableDeliveryStructure;
-import uk.org.siri.siri20.ServiceDelivery;
-import uk.org.siri.siri20.Siri;
-import uk.org.siri.siri20.SituationExchangeDeliveryStructure;
-import uk.org.siri.siri20.VehicleMonitoringDeliveryStructure;
+import org.entur.protobuf.mapper.siri.*;
+import uk.org.siri.siri20.*;
 import uk.org.siri.www.siri.DataReadyRequestStructure;
 import uk.org.siri.www.siri.ServiceDeliveryType;
 import uk.org.siri.www.siri.SiriType;
@@ -16,6 +9,8 @@ import uk.org.siri.www.siri.SiriType;
 import java.util.List;
 
 class Jaxb2PbfMapper extends CommonMapper {
+
+
 
     static SiriType map(Siri siri) {
         final SiriType.Builder builder = SiriType.newBuilder();
@@ -36,7 +31,7 @@ class Jaxb2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static ServiceDeliveryType.Builder map(ServiceDelivery serviceDelivery) {
+    private static <stopMonitoringDeliveries> ServiceDeliveryType.Builder map(ServiceDelivery serviceDelivery) {
         final ServiceDeliveryType.Builder builder = ServiceDeliveryType.newBuilder();
 
         builder.setResponseTimestamp(map(serviceDelivery.getResponseTimestamp()));
@@ -70,6 +65,13 @@ class Jaxb2PbfMapper extends CommonMapper {
             }
         }
 
+        // SIRI SM
+        final List<StopMonitoringDeliveryStructure> stopMonitoringDeliveries = serviceDelivery.getStopMonitoringDeliveries();
+        if (stopMonitoringDeliveries != null) {
+            for (StopMonitoringDeliveryStructure stopMonitoringDelivery : stopMonitoringDeliveries) {
+                builder.addStopMonitoringDelivery(StopMonitoringSiri2PbfMapper.map(stopMonitoringDelivery));
+            }
+        }
         return builder;
     }
 

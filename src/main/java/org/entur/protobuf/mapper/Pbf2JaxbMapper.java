@@ -1,16 +1,10 @@
 package org.entur.protobuf.mapper;
 
-import org.entur.protobuf.mapper.siri.CommonMapper;
-import org.entur.protobuf.mapper.siri.EstimatedTimetablePbf2SiriMapper;
-import org.entur.protobuf.mapper.siri.SituationExchangePbf2SiriMapper;
-import org.entur.protobuf.mapper.siri.VehicleMonitoringPbf2SiriMapper;
+import org.entur.protobuf.mapper.siri.*;
 import uk.org.siri.siri20.DataReadyRequestStructure;
 import uk.org.siri.siri20.ServiceDelivery;
 import uk.org.siri.siri20.Siri;
-import uk.org.siri.www.siri.ServiceDeliveryType;
-import uk.org.siri.www.siri.SiriType;
-import uk.org.siri.www.siri.SituationExchangeDeliveryStructure;
-import uk.org.siri.www.siri.VehicleMonitoringDeliveryStructure;
+import uk.org.siri.www.siri.*;
 
 class Pbf2JaxbMapper extends CommonMapper {
 
@@ -51,6 +45,14 @@ class Pbf2JaxbMapper extends CommonMapper {
                 mapped.getSituationExchangeDeliveries().add(SituationExchangePbf2SiriMapper.map(situationExchangeDeliveryStructure));
             }
         }
+
+
+        if (serviceDelivery.getStopMonitoringDeliveryList() != null) {
+            for (StopMonitoringDeliveryStructure stopMonitoringDeliveryStructure : serviceDelivery.getStopMonitoringDeliveryList()) {
+                mapped.getStopMonitoringDeliveries().add(StopMonitoringPbf2SiriMapper.map(stopMonitoringDeliveryStructure));
+            }
+        }
+
         
         if (serviceDelivery.hasResponseTimestamp()) {
             mapped.setResponseTimestamp(map(serviceDelivery.getResponseTimestamp()));
