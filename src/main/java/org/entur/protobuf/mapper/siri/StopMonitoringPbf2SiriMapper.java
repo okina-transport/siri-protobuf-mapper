@@ -19,7 +19,7 @@ public class StopMonitoringPbf2SiriMapper extends CommonMapper {
         mapped.setVersion(deliveryStructure.getVersion());
 
         List<MonitoredStopVisitStructure> monitoredStopVisits = deliveryStructure.getMonitoredStopVisitList();
-        if (monitoredStopVisits != null && !monitoredStopVisits.isEmpty()){
+        if (monitoredStopVisits != null && !monitoredStopVisits.isEmpty()) {
             for (MonitoredStopVisitStructure monitoredStopVisit : monitoredStopVisits) {
                 mapped.getMonitoredStopVisits().add(map(monitoredStopVisit));
             }
@@ -30,10 +30,21 @@ public class StopMonitoringPbf2SiriMapper extends CommonMapper {
     private static uk.org.siri.siri20.MonitoredStopVisit map(uk.org.siri.www.siri.MonitoredStopVisitStructure monitoredStopVisitStructure) {
 
         uk.org.siri.siri20.MonitoredStopVisit monitoredStopVisit = new uk.org.siri.siri20.MonitoredStopVisit();
-        monitoredStopVisit.setRecordedAtTime(map(monitoredStopVisitStructure.getRecordedAtTime()));
-        monitoredStopVisit.setItemIdentifier(monitoredStopVisitStructure.getItemIdentifier());
-        monitoredStopVisit.setMonitoringRef(map(monitoredStopVisitStructure.getMonitoringRef()));
-        monitoredStopVisit.setMonitoredVehicleJourney(map(monitoredStopVisitStructure.getMonitoredVehicleJourney()));
+        if (monitoredStopVisitStructure.getRecordedAtTime() != null) {
+            monitoredStopVisit.setRecordedAtTime(map(monitoredStopVisitStructure.getRecordedAtTime()));
+        }
+
+        if (monitoredStopVisitStructure.getItemIdentifier() != null) {
+            monitoredStopVisit.setItemIdentifier(monitoredStopVisitStructure.getItemIdentifier());
+        }
+
+        if (monitoredStopVisitStructure.getMonitoringRef() != null) {
+            monitoredStopVisit.setMonitoringRef(map(monitoredStopVisitStructure.getMonitoringRef()));
+        }
+
+        if (monitoredStopVisitStructure.getMonitoredVehicleJourney() != null) {
+            monitoredStopVisit.setMonitoredVehicleJourney(map(monitoredStopVisitStructure.getMonitoredVehicleJourney()));
+        }
         return monitoredStopVisit;
     }
 
@@ -41,70 +52,146 @@ public class StopMonitoringPbf2SiriMapper extends CommonMapper {
     private static uk.org.siri.siri20.MonitoredVehicleJourneyStructure map(uk.org.siri.www.siri.MonitoredVehicleJourneyStructure monitoredVehicleJourney) {
 
         uk.org.siri.siri20.MonitoredVehicleJourneyStructure struct = new uk.org.siri.siri20.MonitoredVehicleJourneyStructure();
-        struct.setLineRef(map(monitoredVehicleJourney.getLineRef()));
-        struct.setFramedVehicleJourneyRef(map(monitoredVehicleJourney.getFramedVehicleJourneyRef()));
-        struct.setJourneyPatternRef(map(monitoredVehicleJourney.getJourneyPatternRef()));
-        struct.setJourneyPatternName(map(monitoredVehicleJourney.getJourneyPatternName()));
-
-        for (VehicleModesEnumeration vehicleModesEnumeration : monitoredVehicleJourney.getVehicleModeList()) {
-            struct.getVehicleModes().add(map(vehicleModesEnumeration));
+        if (monitoredVehicleJourney.getLineRef() != null) {
+            struct.setLineRef(map(monitoredVehicleJourney.getLineRef()));
         }
 
-        struct.setRouteRef(map(monitoredVehicleJourney.getRouteRef()));
-
-        for (NaturalLanguageStringStructure publishedName : monitoredVehicleJourney.getPublishedLineNameList()) {
-            struct.getPublishedLineNames().add(map(publishedName));
+        if (monitoredVehicleJourney.getFramedVehicleJourneyRef() != null) {
+            struct.setFramedVehicleJourneyRef(map(monitoredVehicleJourney.getFramedVehicleJourneyRef()));
         }
 
-        for (NaturalLanguageStringStructure directionName : monitoredVehicleJourney.getDirectionNameList()) {
-            struct.getDirectionNames().add(map(directionName));
+        if (monitoredVehicleJourney.getJourneyPatternRef() != null) {
+            struct.setJourneyPatternRef(map(monitoredVehicleJourney.getJourneyPatternRef()));
         }
 
-        struct.setOperatorRef(map(monitoredVehicleJourney.getOperatorRef()));
-        struct.setOriginRef(map(monitoredVehicleJourney.getOriginRef()));
-
-        for (NaturalLanguagePlaceNameStructure originName : monitoredVehicleJourney.getOriginNameList()) {
-            struct.getOriginNames().add(map(originName));
+        if (monitoredVehicleJourney.getJourneyPatternName() != null) {
+            struct.setJourneyPatternName(map(monitoredVehicleJourney.getJourneyPatternName()));
         }
 
-        struct.setDestinationRef(map(monitoredVehicleJourney.getDestinationRef()));
-
-        for (NaturalLanguageStringStructure destinationName : monitoredVehicleJourney.getDestinationNameList()) {
-            struct.getDestinationNames().add((map(destinationName)));
+        if (monitoredVehicleJourney.getVehicleModeList() != null) {
+            for (VehicleModesEnumeration vehicleModesEnumeration : monitoredVehicleJourney.getVehicleModeList()) {
+                struct.getVehicleModes().add(map(vehicleModesEnumeration));
+            }
         }
 
-        for (NaturalLanguageStringStructure vehicleJourneyName : monitoredVehicleJourney.getVehicleJourneyNameList()) {
-            struct.getVehicleJourneyNames().add((map(vehicleJourneyName)));
+        if (monitoredVehicleJourney.getRouteRef() != null) {
+            struct.setRouteRef(map(monitoredVehicleJourney.getRouteRef()));
         }
 
-        struct.setOriginAimedDepartureTime(map(monitoredVehicleJourney.getOriginAimedDepartureTime()));
-        struct.setDestinationAimedArrivalTime(map(monitoredVehicleJourney.getDestinationAimedArrivalTime()));
+        if (monitoredVehicleJourney.getPublishedLineNameList() != null) {
+            for (NaturalLanguageStringStructure publishedName : monitoredVehicleJourney.getPublishedLineNameList()) {
+                struct.getPublishedLineNames().add(map(publishedName));
+            }
+        }
+
+        if (monitoredVehicleJourney.getDirectionNameList() != null) {
+            for (NaturalLanguageStringStructure directionName : monitoredVehicleJourney.getDirectionNameList()) {
+                struct.getDirectionNames().add(map(directionName));
+            }
+        }
+
+        if (monitoredVehicleJourney.getOperatorRef() != null) {
+            struct.setOperatorRef(map(monitoredVehicleJourney.getOperatorRef()));
+        }
+
+        if (monitoredVehicleJourney.getOriginRef() != null) {
+            struct.setOriginRef(map(monitoredVehicleJourney.getOriginRef()));
+        }
+
+        if (monitoredVehicleJourney.getOriginNameList() != null) {
+            for (NaturalLanguagePlaceNameStructure originName : monitoredVehicleJourney.getOriginNameList()) {
+                struct.getOriginNames().add(map(originName));
+            }
+        }
+
+        if (monitoredVehicleJourney.getDestinationRef() != null) {
+            struct.setDestinationRef(map(monitoredVehicleJourney.getDestinationRef()));
+        }
+
+        if (monitoredVehicleJourney.getDestinationNameList() != null) {
+            for (NaturalLanguageStringStructure destinationName : monitoredVehicleJourney.getDestinationNameList()) {
+                struct.getDestinationNames().add((map(destinationName)));
+            }
+        }
+
+        if (monitoredVehicleJourney.getVehicleJourneyNameList() != null) {
+            for (NaturalLanguageStringStructure vehicleJourneyName : monitoredVehicleJourney.getVehicleJourneyNameList()) {
+                struct.getVehicleJourneyNames().add((map(vehicleJourneyName)));
+            }
+        }
+
+        if (monitoredVehicleJourney.getOriginAimedDepartureTime() != null) {
+            struct.setOriginAimedDepartureTime(map(monitoredVehicleJourney.getOriginAimedDepartureTime()));
+        }
+
+        if (monitoredVehicleJourney.getDestinationAimedArrivalTime() != null){
+            struct.setDestinationAimedArrivalTime(map(monitoredVehicleJourney.getDestinationAimedArrivalTime()));
+        }
+
         struct.setMonitored(monitoredVehicleJourney.getMonitored());
-        struct.setMonitoredCall(map(monitoredVehicleJourney.getMonitoredCall()));
+
+        if (monitoredVehicleJourney.getMonitoredCall() != null){
+            struct.setMonitoredCall(map(monitoredVehicleJourney.getMonitoredCall()));
+        }
 
         return struct;
     }
 
     private static uk.org.siri.siri20.MonitoredCallStructure map(uk.org.siri.www.siri.MonitoredCallStructure monitoredCall) {
         uk.org.siri.siri20.MonitoredCallStructure struct = new uk.org.siri.siri20.MonitoredCallStructure();
-        struct.setStopPointRef(map(monitoredCall.getStopPointRef()));
+        if (monitoredCall.getStopPointRef() != null){
+            struct.setStopPointRef(map(monitoredCall.getStopPointRef()));
+        }
+
         struct.setOrder(BigInteger.valueOf(monitoredCall.getOrder()));
-        for (NaturalLanguageStringStructure stopPointName : monitoredCall.getStopPointNameList()) {
-            struct.getStopPointNames().add(map(stopPointName));
+
+        if (monitoredCall.getStopPointNameList() != null ){
+            for (NaturalLanguageStringStructure stopPointName : monitoredCall.getStopPointNameList()) {
+                struct.getStopPointNames().add(map(stopPointName));
+            }
         }
 
-        for (NaturalLanguageStringStructure destinationDisplay : monitoredCall.getDestinationDisplayList()) {
-            struct.getDestinationDisplaies().add(map(destinationDisplay));
+        if (monitoredCall.getDestinationDisplayList() != null){
+            for (NaturalLanguageStringStructure destinationDisplay : monitoredCall.getDestinationDisplayList()) {
+                struct.getDestinationDisplaies().add(map(destinationDisplay));
+            }
         }
 
-        struct.setAimedArrivalTime(map(monitoredCall.getAimedArrivalTime()));
-        struct.setExpectedArrivalTime(map(monitoredCall.getExpectedArrivalTime()));
-        struct.setArrivalStatus(map(monitoredCall.getArrivalStatus()));
-        struct.setArrivalStopAssignment(map(monitoredCall.getArrivalStopAssignment()));
-        struct.setAimedDepartureTime(map(monitoredCall.getAimedDepartureTime()));
-        struct.setExpectedDepartureTime(map(monitoredCall.getExpectedDepartureTime()));
-        struct.setDepartureStatus(map(monitoredCall.getDepartureStatus()));
-        struct.setDepartureBoardingActivity(map(monitoredCall.getDepartureBoardingActivity()));
+if (monitoredCall.getAimedArrivalTime() != null){
+    struct.setAimedArrivalTime(map(monitoredCall.getAimedArrivalTime()));
+}
+        if (monitoredCall.getExpectedArrivalTime() != null){
+            struct.setExpectedArrivalTime(map(monitoredCall.getExpectedArrivalTime()));
+        }
+
+        if (monitoredCall.getArrivalStatus() != null){
+            struct.setArrivalStatus(map(monitoredCall.getArrivalStatus()));
+        }
+
+        if (monitoredCall.getArrivalStopAssignment() != null){
+            struct.setArrivalStopAssignment(map(monitoredCall.getArrivalStopAssignment()));
+        }
+
+        if (monitoredCall.getAimedDepartureTime() != null){
+            struct.setAimedDepartureTime(map(monitoredCall.getAimedDepartureTime()));
+        }
+
+        if (monitoredCall.getAimedDepartureTime() != null){
+            struct.setAimedDepartureTime(map(monitoredCall.getAimedDepartureTime()));
+        }
+
+        if (monitoredCall.getExpectedDepartureTime() != null){
+            struct.setExpectedDepartureTime(map(monitoredCall.getExpectedDepartureTime()));
+        }
+
+        if (monitoredCall.getDepartureStatus() != null){
+            struct.setDepartureStatus(map(monitoredCall.getDepartureStatus()));
+        }
+
+        if (monitoredCall.getDepartureBoardingActivity() != null){
+            struct.setDepartureBoardingActivity(map(monitoredCall.getDepartureBoardingActivity()));
+        }
+
 
         return struct;
     }
@@ -112,12 +199,23 @@ public class StopMonitoringPbf2SiriMapper extends CommonMapper {
 
     private static uk.org.siri.siri20.StopAssignmentStructure map(uk.org.siri.www.siri.StopAssignmentStructure stopAssignmentStructure) {
         uk.org.siri.siri20.StopAssignmentStructure struct = new uk.org.siri.siri20.StopAssignmentStructure();
-        struct.setActualQuayRef(map(stopAssignmentStructure.getActualQuayRef()));
-        struct.setAimedQuayRef(map(stopAssignmentStructure.getAimedQuayRef()));
-        struct.setExpectedQuayRef(map(stopAssignmentStructure.getExpectedQuayRef()));
 
-        for (NaturalLanguageStringStructure aimedQuayName : stopAssignmentStructure.getAimedQuayNameList()) {
-            struct.getAimedQuayNames().add((map(aimedQuayName)));
+        if (stopAssignmentStructure.getActualQuayRef() != null){
+            struct.setActualQuayRef(map(stopAssignmentStructure.getActualQuayRef()));
+        }
+
+        if (stopAssignmentStructure.getAimedQuayRef() != null){
+            struct.setAimedQuayRef(map(stopAssignmentStructure.getAimedQuayRef()));
+        }
+
+        if (stopAssignmentStructure.getExpectedQuayRef() != null){
+            struct.setExpectedQuayRef(map(stopAssignmentStructure.getExpectedQuayRef()));
+        }
+
+        if (stopAssignmentStructure.getAimedQuayNameList() != null){
+            for (NaturalLanguageStringStructure aimedQuayName : stopAssignmentStructure.getAimedQuayNameList()) {
+                struct.getAimedQuayNames().add((map(aimedQuayName)));
+            }
         }
 
         return struct;
@@ -126,17 +224,15 @@ public class StopMonitoringPbf2SiriMapper extends CommonMapper {
 
     private static uk.org.siri.siri20.QuayRefStructure map(uk.org.siri.www.siri.QuayRefStructure quayRef) {
         uk.org.siri.siri20.QuayRefStructure struct = new uk.org.siri.siri20.QuayRefStructure();
-        struct.setValue(quayRef.getValue());
+        struct.setValue(quayRef != null ? quayRef.getValue() : "");
         return struct;
     }
 
     private static uk.org.siri.siri20.MonitoringRefStructure map(uk.org.siri.www.siri.MonitoringRefStructure monitoredStopVisitStructure) {
         uk.org.siri.siri20.MonitoringRefStructure struct = new uk.org.siri.siri20.MonitoringRefStructure();
-        struct.setValue(monitoredStopVisitStructure.getValue());
+        struct.setValue(monitoredStopVisitStructure != null ? monitoredStopVisitStructure.getValue() : "");
         return struct;
     }
-
-
 
 
 }

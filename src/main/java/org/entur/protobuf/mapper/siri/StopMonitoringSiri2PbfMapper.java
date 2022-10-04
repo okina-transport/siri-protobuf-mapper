@@ -55,45 +55,88 @@ public class StopMonitoringSiri2PbfMapper extends CommonMapper {
     private static uk.org.siri.www.siri.MonitoredVehicleJourneyStructure.Builder map(MonitoredVehicleJourneyStructure monitoredVehicleJourney) {
 
         uk.org.siri.www.siri.MonitoredVehicleJourneyStructure.Builder builder =  uk.org.siri.www.siri.MonitoredVehicleJourneyStructure.newBuilder();
-        builder.setLineRef(map(monitoredVehicleJourney.getLineRef()));
-        builder.setFramedVehicleJourneyRef(map(monitoredVehicleJourney.getFramedVehicleJourneyRef()));
-        builder.setJourneyPatternRef(map(monitoredVehicleJourney.getJourneyPatternRef()));
-        builder.setJourneyPatternName(map(monitoredVehicleJourney.getJourneyPatternName()));
 
-        for (VehicleModesEnumeration vehicleMode : monitoredVehicleJourney.getVehicleModes()) {
-            builder.addVehicleMode(EnumerationMapper.map(vehicleMode));
+        if (monitoredVehicleJourney.getLineRef() != null){
+            builder.setLineRef(map(monitoredVehicleJourney.getLineRef()));
         }
 
-        builder.setRouteRef(map(monitoredVehicleJourney.getRouteRef()));
-
-        for (NaturalLanguageStringStructure publishedLineName : monitoredVehicleJourney.getPublishedLineNames()) {
-            builder.addPublishedLineName(map(publishedLineName));
+        if (monitoredVehicleJourney.getFramedVehicleJourneyRef() != null){
+            builder.setFramedVehicleJourneyRef(map(monitoredVehicleJourney.getFramedVehicleJourneyRef()));
         }
 
-        for (NaturalLanguageStringStructure directionName : monitoredVehicleJourney.getDirectionNames()) {
-            builder.addDirectionName(map(directionName));
+        if (monitoredVehicleJourney.getJourneyPatternRef() != null){
+            builder.setJourneyPatternRef(map(monitoredVehicleJourney.getJourneyPatternRef()));
         }
 
-        builder.setOperatorRef(map(monitoredVehicleJourney.getOperatorRef()));
-        builder.setOriginRef(map(monitoredVehicleJourney.getOriginRef()));
-        for (NaturalLanguagePlaceNameStructure originName : monitoredVehicleJourney.getOriginNames()) {
-            builder.addOriginName(map(originName));
+        if (monitoredVehicleJourney.getJourneyPatternName() != null){
+            builder.setJourneyPatternName(map(monitoredVehicleJourney.getJourneyPatternName()));
         }
 
-        builder.setDestinationRef(map(monitoredVehicleJourney.getDestinationRef()));
-
-        for (NaturalLanguageStringStructure destinationName : monitoredVehicleJourney.getDestinationNames()) {
-            builder.addDestinationName(map(destinationName));
+        if (monitoredVehicleJourney.getVehicleModes() != null){
+            for (VehicleModesEnumeration vehicleMode : monitoredVehicleJourney.getVehicleModes()) {
+                builder.addVehicleMode(EnumerationMapper.map(vehicleMode));
+            }
         }
 
-        for (NaturalLanguageStringStructure vehicleJourneyName : monitoredVehicleJourney.getVehicleJourneyNames()) {
-            builder.addVehicleJourneyName(map(vehicleJourneyName));
+        if (monitoredVehicleJourney.getRouteRef() != null){
+            builder.setRouteRef(map(monitoredVehicleJourney.getRouteRef()));
         }
 
-        builder.setOriginAimedDepartureTime(map(monitoredVehicleJourney.getOriginAimedDepartureTime()));
-        builder.setDestinationAimedArrivalTime(map(monitoredVehicleJourney.getDestinationAimedArrivalTime()));
+        if (monitoredVehicleJourney.getPublishedLineNames() != null){
+            for (NaturalLanguageStringStructure publishedLineName : monitoredVehicleJourney.getPublishedLineNames()) {
+                builder.addPublishedLineName(map(publishedLineName));
+            }
+        }
+
+        if (monitoredVehicleJourney.getDirectionNames() != null){
+            for (NaturalLanguageStringStructure directionName : monitoredVehicleJourney.getDirectionNames()) {
+                builder.addDirectionName(map(directionName));
+            }
+        }
+
+        if (monitoredVehicleJourney.getOperatorRef() != null){
+            builder.setOperatorRef(map(monitoredVehicleJourney.getOperatorRef()));
+        }
+
+        if (monitoredVehicleJourney.getOriginRef() != null){
+            builder.setOriginRef(map(monitoredVehicleJourney.getOriginRef()));
+        }
+
+        if (monitoredVehicleJourney.getOriginNames() != null){
+            for (NaturalLanguagePlaceNameStructure originName : monitoredVehicleJourney.getOriginNames()) {
+                builder.addOriginName(map(originName));
+            }
+        }
+
+        if (monitoredVehicleJourney.getDestinationRef() != null){
+            builder.setDestinationRef(map(monitoredVehicleJourney.getDestinationRef()));
+        }
+
+        if (monitoredVehicleJourney.getDestinationNames() != null){
+            for (NaturalLanguageStringStructure destinationName : monitoredVehicleJourney.getDestinationNames()) {
+                builder.addDestinationName(map(destinationName));
+            }
+        }
+
+        if (monitoredVehicleJourney.getVehicleJourneyNames() != null){
+            for (NaturalLanguageStringStructure vehicleJourneyName : monitoredVehicleJourney.getVehicleJourneyNames()) {
+                builder.addVehicleJourneyName(map(vehicleJourneyName));
+            }
+        }
+
+        if (monitoredVehicleJourney.getOriginAimedDepartureTime() != null){
+            builder.setOriginAimedDepartureTime(map(monitoredVehicleJourney.getOriginAimedDepartureTime()));
+        }
+
+        if (monitoredVehicleJourney.getDestinationAimedArrivalTime() != null){
+            builder.setDestinationAimedArrivalTime(map(monitoredVehicleJourney.getDestinationAimedArrivalTime()));
+        }
+
+        if (monitoredVehicleJourney.getMonitoredCall() != null){
+            builder.setMonitoredCall(map(monitoredVehicleJourney.getMonitoredCall()));
+        }
         builder.setMonitored(monitoredVehicleJourney.isMonitored());
-        builder.setMonitoredCall(map(monitoredVehicleJourney.getMonitoredCall()));
+
         return builder;
     }
 
@@ -107,14 +150,38 @@ public class StopMonitoringSiri2PbfMapper extends CommonMapper {
         for (NaturalLanguageStringStructure destinationDisplay : monitoredCall.getDestinationDisplaies()) {
             builder.addDestinationDisplay(map(destinationDisplay));
         }
-        builder.setAimedArrivalTime(map(monitoredCall.getAimedArrivalTime()));
-        builder.setExpectedArrivalTime(map(monitoredCall.getExpectedArrivalTime()));
-        builder.setArrivalStatus(map(monitoredCall.getArrivalStatus()));
-        builder.setArrivalStopAssignment(map(monitoredCall.getArrivalStopAssignment()));
-        builder.setAimedDepartureTime(map(monitoredCall.getAimedDepartureTime()));
-        builder.setExpectedDepartureTime(map(monitoredCall.getExpectedDepartureTime()));
-        builder.setDepartureStatus(map(monitoredCall.getDepartureStatus()));
-        builder.setDepartureBoardingActivity(map(monitoredCall.getDepartureBoardingActivity()));
+
+        if (monitoredCall.getAimedArrivalTime() != null){
+            builder.setAimedArrivalTime(map(monitoredCall.getAimedArrivalTime()));
+        }
+
+        if (monitoredCall.getExpectedArrivalTime() != null){
+            builder.setExpectedArrivalTime(map(monitoredCall.getExpectedArrivalTime()));
+        }
+
+        if (monitoredCall.getArrivalStatus() != null){
+            builder.setArrivalStatus(map(monitoredCall.getArrivalStatus()));
+        }
+
+        if (monitoredCall.getArrivalStopAssignment() != null){
+            builder.setArrivalStopAssignment(map(monitoredCall.getArrivalStopAssignment()));
+        }
+
+        if (monitoredCall.getAimedDepartureTime() != null){
+            builder.setAimedDepartureTime(map(monitoredCall.getAimedDepartureTime()));
+        }
+
+        if (monitoredCall.getExpectedDepartureTime() != null){
+            builder.setExpectedDepartureTime(map(monitoredCall.getExpectedDepartureTime()));
+        }
+
+        if (monitoredCall.getDepartureStatus() != null){
+            builder.setDepartureStatus(map(monitoredCall.getDepartureStatus()));
+        }
+        if (monitoredCall.getDepartureBoardingActivity() != null){
+            builder.setDepartureBoardingActivity(map(monitoredCall.getDepartureBoardingActivity()));
+        }
+
         return builder;
     }
 
