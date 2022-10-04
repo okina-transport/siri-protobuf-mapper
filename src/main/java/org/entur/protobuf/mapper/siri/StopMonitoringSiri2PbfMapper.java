@@ -121,12 +121,24 @@ public class StopMonitoringSiri2PbfMapper extends CommonMapper {
 
     private static uk.org.siri.www.siri.StopAssignmentStructure map(uk.org.siri.siri20.StopAssignmentStructure stopAssignmentStructure) {
         uk.org.siri.www.siri.StopAssignmentStructure.Builder struct = uk.org.siri.www.siri.StopAssignmentStructure.newBuilder();
-        struct.setActualQuayRef(map(stopAssignmentStructure.getActualQuayRef()));
-        struct.setAimedQuayRef(map(stopAssignmentStructure.getAimedQuayRef()));
-        for (NaturalLanguageStringStructure aimedQuayName : stopAssignmentStructure.getAimedQuayNames()) {
-            struct.addAimedQuayName(map(aimedQuayName));
+
+        if (stopAssignmentStructure.getActualQuayRef() != null){
+            struct.setActualQuayRef(map(stopAssignmentStructure.getActualQuayRef()));
         }
-        struct.setExpectedQuayRef(map(stopAssignmentStructure.getExpectedQuayRef()));
+
+        if (stopAssignmentStructure.getAimedQuayRef() != null){
+            struct.setAimedQuayRef(map(stopAssignmentStructure.getAimedQuayRef()));
+        }
+
+        if (stopAssignmentStructure.getAimedQuayNames() != null){
+            for (NaturalLanguageStringStructure aimedQuayName : stopAssignmentStructure.getAimedQuayNames()) {
+                struct.addAimedQuayName(map(aimedQuayName));
+            }
+        }
+
+        if (stopAssignmentStructure.getExpectedQuayRef() != null){
+            struct.setExpectedQuayRef(map(stopAssignmentStructure.getExpectedQuayRef()));
+        }
         return struct.build();
 
     }
