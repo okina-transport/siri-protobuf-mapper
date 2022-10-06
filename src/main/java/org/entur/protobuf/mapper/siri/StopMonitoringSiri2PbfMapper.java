@@ -143,7 +143,11 @@ public class StopMonitoringSiri2PbfMapper extends CommonMapper {
     private static uk.org.siri.www.siri.MonitoredCallStructure.Builder map(uk.org.siri.siri20.MonitoredCallStructure monitoredCall) {
         uk.org.siri.www.siri.MonitoredCallStructure.Builder builder =  uk.org.siri.www.siri.MonitoredCallStructure.newBuilder();
         builder.setStopPointRef(map(monitoredCall.getStopPointRef()));
-        builder.setOrder(monitoredCall.getOrder().intValue());
+
+        if (monitoredCall.getOrder() != null){
+            builder.setOrder(monitoredCall.getOrder().intValue());
+        }
+
         for (NaturalLanguageStringStructure stopPointName : monitoredCall.getStopPointNames()) {
             builder.addStopPointName(map(stopPointName));
         }
