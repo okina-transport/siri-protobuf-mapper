@@ -135,7 +135,11 @@ public class StopMonitoringSiri2PbfMapper extends CommonMapper {
         if (monitoredVehicleJourney.getMonitoredCall() != null){
             builder.setMonitoredCall(map(monitoredVehicleJourney.getMonitoredCall()));
         }
-        builder.setMonitored(monitoredVehicleJourney.isMonitored());
+
+        if (monitoredVehicleJourney.isMonitored() != null){
+            builder.setMonitored(monitoredVehicleJourney.isMonitored());
+        }
+
 
         return builder;
     }
