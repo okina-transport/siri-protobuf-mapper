@@ -8,25 +8,7 @@ import uk.org.ifopt.siri20.StopPlaceComponentRefStructure;
 import uk.org.ifopt.siri20.StopPlaceRef;
 import uk.org.ifopt.www.acsb.AccessibilityLimitationStructure;
 import uk.org.ifopt.www.ifopt.StopPlaceRefStructure;
-import uk.org.siri.siri20.AdviceRefStructure;
-import uk.org.siri.siri20.AffectedStopPointStructure;
-import uk.org.siri.siri20.AffectsScopeStructure;
-import uk.org.siri.siri20.BlockingStructure;
-import uk.org.siri.siri20.BoardingStructure;
-import uk.org.siri.siri20.CasualtiesStructure;
-import uk.org.siri.siri20.DelaysStructure;
-import uk.org.siri.siri20.EasementsStructure;
-import uk.org.siri.siri20.Extensions;
-import uk.org.siri.siri20.NetworkRefStructure;
-import uk.org.siri.siri20.PtAdviceStructure;
-import uk.org.siri.siri20.PtConsequenceStructure;
-import uk.org.siri.siri20.PtConsequencesStructure;
-import uk.org.siri.siri20.PtSituationElement;
-import uk.org.siri.siri20.ReferencesStructure;
-import uk.org.siri.siri20.RelatedSituationStructure;
-import uk.org.siri.siri20.SituationExchangeDeliveryStructure;
-import uk.org.siri.siri20.SituationNumber;
-import uk.org.siri.siri20.SituationSourceStructure;
+import uk.org.siri.siri20.*;
 import uk.org.siri.www.siri.AffectedLineStructure;
 import uk.org.siri.www.siri.AffectedOperatorStructure;
 import uk.org.siri.www.siri.AffectedRouteStructure;
@@ -155,7 +137,40 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
             //TODO: Extensions are currently ignored
             //mapped.setExtensions(map(sx.getExtensions()));
         }
+
+        if (sx.getEnvironmentReason() != null){
+            mapped.setEnvironmentReason(map(sx.getEnvironmentReason()));
+        }
+
+        if (sx.getEquipmentReason() != null){
+            mapped.setEquipmentReason(map(sx.getEquipmentReason()));
+        }
+
+        if (sx.getMiscellaneousReason() != null){
+            mapped.setMiscellaneousReason(map(sx.getMiscellaneousReason()));
+        }
+
+        if (sx.getPersonnelReason() != null){
+            mapped.setPersonnelReason(map(sx.getPersonnelReason()));
+        }
         return mapped;
+    }
+
+    private static PersonnelReasonEnumeration map(uk.org.siri.www.siri.PersonnelReasonEnumeration personnelReason) {
+        return PersonnelReasonEnumeration.fromValue(personnelReason.toString());
+    }
+
+
+    private static MiscellaneousReasonEnumeration map(uk.org.siri.www.siri.MiscellaneousReasonEnumeration miscellaneousReason) {
+        return MiscellaneousReasonEnumeration.fromValue(miscellaneousReason.toString());
+    }
+
+    private static EquipmentReasonEnumeration map(uk.org.siri.www.siri.EquipmentReasonEnumeration equipmentReason) {
+        return EquipmentReasonEnumeration.fromValue(equipmentReason.toString());
+    }
+
+    private static EnvironmentReasonEnumeration map(uk.org.siri.www.siri.EnvironmentReasonEnumeration environmentReason) {
+        return EnvironmentReasonEnumeration.fromValue(environmentReason.toString());
     }
 
     private static AffectsScopeStructure map(uk.org.siri.www.siri.AffectsScopeStructure affects) {

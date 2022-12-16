@@ -132,7 +132,39 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
             //builder.setExtensions(map(ptSituationElement.getExtensions()));
         }
 
+        if (ptSituationElement.getEquipmentReason() != null){
+            builder.setEquipmentReason(map(ptSituationElement.getEquipmentReason()));
+        }
+
+        if (ptSituationElement.getPersonnelReason() != null){
+            builder.setPersonnelReason(map(ptSituationElement.getPersonnelReason()));
+        }
+
+        if (ptSituationElement.getMiscellaneousReason() != null){
+            builder.setMiscellaneousReason(map(ptSituationElement.getMiscellaneousReason()));
+        }
+
+        if (ptSituationElement.getEnvironmentReason() != null){
+            builder.setEnvironmentReason(map(ptSituationElement.getEnvironmentReason()));
+        }
+
         return builder;
+    }
+
+    private static uk.org.siri.www.siri.EnvironmentReasonEnumeration map(EnvironmentReasonEnumeration environmentReason) {
+        return uk.org.siri.www.siri.EnvironmentReasonEnumeration.valueOf(environmentReason.value());
+    }
+
+    private static uk.org.siri.www.siri.MiscellaneousReasonEnumeration map(MiscellaneousReasonEnumeration miscellaneousReason) {
+        return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.valueOf(miscellaneousReason.value());
+    }
+
+    private static uk.org.siri.www.siri.PersonnelReasonEnumeration map(PersonnelReasonEnumeration personnelReason) {
+        return uk.org.siri.www.siri.PersonnelReasonEnumeration.valueOf(personnelReason.value());
+    }
+
+    private static uk.org.siri.www.siri.EquipmentReasonEnumeration map(EquipmentReasonEnumeration equipmentReason) {
+        return uk.org.siri.www.siri.EquipmentReasonEnumeration.valueOf(equipmentReason.value());
     }
 
     private static AffectsScopeStructure.Builder map(uk.org.siri.siri20.AffectsScopeStructure affects) {
