@@ -152,19 +152,55 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
     }
 
     private static uk.org.siri.www.siri.EnvironmentReasonEnumeration map(EnvironmentReasonEnumeration environmentReason) {
-        return uk.org.siri.www.siri.EnvironmentReasonEnumeration.valueOf(environmentReason.value());
+
+        switch (environmentReason){
+            case UNDEFINED_ENVIRONMENTAL_PROBLEM:
+                return uk.org.siri.www.siri.EnvironmentReasonEnumeration.ENVIRONMENT_REASON_ENUMERATION_UNDEFINED_ENVIRONMENTAL_PROBLEM;
+            default:
+                return uk.org.siri.www.siri.EnvironmentReasonEnumeration.ENVIRONMENT_REASON_ENUMERATION_UNKNOWN;
+        }
     }
 
     private static uk.org.siri.www.siri.MiscellaneousReasonEnumeration map(MiscellaneousReasonEnumeration miscellaneousReason) {
-        return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.valueOf(miscellaneousReason.value());
+        switch(miscellaneousReason){
+            case UNDEFINED_PROBLEM:
+                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_UNDEFINED_PROBLEM;
+            case DEMONSTRATION:
+                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_DEMONSTRATION;
+            case ACCIDENT:
+                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_ACCIDENT;
+            case HOLIDAY:
+                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_HOLIDAY;
+            case POLICE_ACTIVITY:
+                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_POLICE_ACTIVITY;
+            case INCIDENT:
+                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_INCIDENT;
+            default:
+                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_UNKNOWN;
+        }
     }
 
     private static uk.org.siri.www.siri.PersonnelReasonEnumeration map(PersonnelReasonEnumeration personnelReason) {
-        return uk.org.siri.www.siri.PersonnelReasonEnumeration.valueOf(personnelReason.value());
+
+        switch(personnelReason){
+            case INDUSTRIAL_ACTION:
+                return uk.org.siri.www.siri.PersonnelReasonEnumeration.PERSONNEL_REASON_ENUMERATION_INDUSTRIAL_ACTION;
+            default :
+                return uk.org.siri.www.siri.PersonnelReasonEnumeration.PERSONNEL_REASON_ENUMERATION_UNKNOWN;
+        }
     }
 
     private static uk.org.siri.www.siri.EquipmentReasonEnumeration map(EquipmentReasonEnumeration equipmentReason) {
-        return uk.org.siri.www.siri.EquipmentReasonEnumeration.valueOf(equipmentReason.value());
+        switch(equipmentReason){
+            case TECHNICAL_PROBLEM:
+                return uk.org.siri.www.siri.EquipmentReasonEnumeration.EQUIPMENT_REASON_ENUMERATION_TECHNICAL_PROBLEM;
+            case MAINTENANCE_WORK:
+                return uk.org.siri.www.siri.EquipmentReasonEnumeration.EQUIPMENT_REASON_ENUMERATION_MAINTENANCE_WORK;
+            case CONSTRUCTION_WORK:
+                return uk.org.siri.www.siri.EquipmentReasonEnumeration.EQUIPMENT_REASON_ENUMERATION_CONSTRUCTION_WORK;
+            default:
+                return uk.org.siri.www.siri.EquipmentReasonEnumeration.EQUIPMENT_REASON_ENUMERATION_UNKNOWN;
+        }
     }
 
     private static AffectsScopeStructure.Builder map(uk.org.siri.siri20.AffectsScopeStructure affects) {

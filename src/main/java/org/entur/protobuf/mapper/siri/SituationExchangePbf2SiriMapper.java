@@ -157,20 +157,56 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
     }
 
     private static PersonnelReasonEnumeration map(uk.org.siri.www.siri.PersonnelReasonEnumeration personnelReason) {
-        return PersonnelReasonEnumeration.fromValue(personnelReason.toString());
+
+        switch(personnelReason){
+            case PERSONNEL_REASON_ENUMERATION_INDUSTRIAL_ACTION:
+                return PersonnelReasonEnumeration.INDUSTRIAL_ACTION;
+            default :
+                return PersonnelReasonEnumeration.UNKNOWN;
+        }
     }
 
 
     private static MiscellaneousReasonEnumeration map(uk.org.siri.www.siri.MiscellaneousReasonEnumeration miscellaneousReason) {
-        return MiscellaneousReasonEnumeration.fromValue(miscellaneousReason.toString());
+        switch(miscellaneousReason){
+            case MISCELLANEOUS_REASON_ENUMERATION_UNDEFINED_PROBLEM:
+                return MiscellaneousReasonEnumeration.UNDEFINED_PROBLEM;
+            case MISCELLANEOUS_REASON_ENUMERATION_DEMONSTRATION:
+                return MiscellaneousReasonEnumeration.DEMONSTRATION;
+            case MISCELLANEOUS_REASON_ENUMERATION_ACCIDENT:
+                return MiscellaneousReasonEnumeration.ACCIDENT;
+            case MISCELLANEOUS_REASON_ENUMERATION_HOLIDAY:
+                return MiscellaneousReasonEnumeration.HOLIDAY;
+            case MISCELLANEOUS_REASON_ENUMERATION_POLICE_ACTIVITY:
+                return MiscellaneousReasonEnumeration.POLICE_ACTIVITY;
+            case MISCELLANEOUS_REASON_ENUMERATION_INCIDENT:
+                return MiscellaneousReasonEnumeration.INCIDENT;
+            default:
+                return MiscellaneousReasonEnumeration.UNKNOWN;
+        }
     }
 
     private static EquipmentReasonEnumeration map(uk.org.siri.www.siri.EquipmentReasonEnumeration equipmentReason) {
-        return EquipmentReasonEnumeration.fromValue(equipmentReason.toString());
+        switch(equipmentReason){
+            case EQUIPMENT_REASON_ENUMERATION_TECHNICAL_PROBLEM:
+                return EquipmentReasonEnumeration.TECHNICAL_PROBLEM;
+            case EQUIPMENT_REASON_ENUMERATION_MAINTENANCE_WORK:
+                return EquipmentReasonEnumeration.MAINTENANCE_WORK;
+            case EQUIPMENT_REASON_ENUMERATION_CONSTRUCTION_WORK:
+                return EquipmentReasonEnumeration.CONSTRUCTION_WORK;
+            default:
+                return EquipmentReasonEnumeration.UNKNOWN;
+        }
     }
 
     private static EnvironmentReasonEnumeration map(uk.org.siri.www.siri.EnvironmentReasonEnumeration environmentReason) {
-        return EnvironmentReasonEnumeration.fromValue(environmentReason.toString());
+
+        switch(environmentReason){
+            case ENVIRONMENT_REASON_ENUMERATION_UNDEFINED_ENVIRONMENTAL_PROBLEM:
+                return EnvironmentReasonEnumeration.UNDEFINED_ENVIRONMENTAL_PROBLEM;
+            default:
+                return EnvironmentReasonEnumeration.UNKNOWN;
+        }
     }
 
     private static AffectsScopeStructure map(uk.org.siri.www.siri.AffectsScopeStructure affects) {
