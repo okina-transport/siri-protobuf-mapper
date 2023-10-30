@@ -6,6 +6,7 @@ import uk.org.siri.siri20.MonitoredCallStructure;
 import uk.org.siri.siri20.ProgressBetweenStopsStructure;
 import uk.org.siri.siri20.VehicleActivityStructure;
 import uk.org.siri.siri20.VehicleMonitoringDeliveryStructure;
+import uk.org.siri.siri20.VehicleMonitoringRefStructure;
 import uk.org.siri.www.siri.NaturalLanguagePlaceNameStructure;
 import uk.org.siri.www.siri.NaturalLanguageStringStructure;
 import uk.org.siri.www.siri.VehicleModesEnumeration;
@@ -46,6 +47,10 @@ public class VehicleMonitoringPbf2SiriMapper extends CommonMapper{
 
         if (vehicleActivityStructure.hasMonitoredVehicleJourney()) {
             mapped.setMonitoredVehicleJourney(map(vehicleActivityStructure.getMonitoredVehicleJourney()));
+        }
+
+        if(vehicleActivityStructure.hasVehicleMonitoringRef()){
+            mapped.setVehicleMonitoringRef(map(vehicleActivityStructure.getVehicleMonitoringRef()));
         }
         return mapped;
     }
@@ -163,6 +168,12 @@ public class VehicleMonitoringPbf2SiriMapper extends CommonMapper{
         ProgressBetweenStopsStructure mapped = new ProgressBetweenStopsStructure();
         mapped.setPercentage(BigDecimal.valueOf(progressBetweenStops.getPercentage()));
         mapped.setLinkDistance((BigDecimal.valueOf(progressBetweenStops.getLinkDistance())));
+        return mapped;
+    }
+
+    private static VehicleMonitoringRefStructure map(uk.org.siri.www.siri.VehicleMonitoringRefStructure vehicleMonitoringRef) {
+        VehicleMonitoringRefStructure mapped = new VehicleMonitoringRefStructure();
+        mapped.setValue(vehicleMonitoringRef.getValue());
         return mapped;
     }
 

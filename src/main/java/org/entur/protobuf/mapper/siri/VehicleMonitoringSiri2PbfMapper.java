@@ -2,7 +2,7 @@ package org.entur.protobuf.mapper.siri;
 
 import uk.org.siri.siri20.NaturalLanguageStringStructure;
 import uk.org.siri.siri20.VehicleModesEnumeration;
-import uk.org.siri.www.siri.LocationStructure;
+import uk.org.siri.www.siri.VehicleMonitoringRefStructure;
 import uk.org.siri.www.siri.MonitoredCallStructure;
 import uk.org.siri.www.siri.PreviousCallStructure;
 import uk.org.siri.www.siri.PreviousCallsStructure;
@@ -48,6 +48,9 @@ public class VehicleMonitoringSiri2PbfMapper extends CommonMapper{
         if (vehicleActivity.getMonitoredVehicleJourney() != null) {
             builder.setMonitoredVehicleJourney(map(vehicleActivity.getMonitoredVehicleJourney()));
         }
+        if (vehicleActivity.getVehicleMonitoringRef() != null) {
+            builder.setVehicleMonitoringRef(map(vehicleActivity.getVehicleMonitoringRef()));
+        }
         return builder;
     }
 
@@ -58,6 +61,14 @@ public class VehicleMonitoringSiri2PbfMapper extends CommonMapper{
         }
         if (progressBetweenStops.getPercentage() != null) {
             builder.setPercentage(progressBetweenStops.getPercentage().doubleValue());
+        }
+        return builder;
+    }
+
+    private static VehicleMonitoringRefStructure.Builder map(uk.org.siri.siri20.VehicleMonitoringRefStructure vehicleMonitoringRef) {
+        VehicleMonitoringRefStructure.Builder builder = VehicleMonitoringRefStructure.newBuilder();
+        if (vehicleMonitoringRef.getValue() != null) {
+            builder.setValue(vehicleMonitoringRef.getValue());
         }
         return builder;
     }
