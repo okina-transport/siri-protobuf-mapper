@@ -1,11 +1,11 @@
 package org.entur.protobuf.mapper.siri;
 
-import uk.org.siri.siri20.EstimatedCall;
-import uk.org.siri.siri20.EstimatedTimetableDeliveryStructure;
-import uk.org.siri.siri20.EstimatedVehicleJourney;
-import uk.org.siri.siri20.QuayRefStructure;
-import uk.org.siri.siri20.RecordedCall;
-import uk.org.siri.siri20.StopAssignmentStructure;
+import uk.org.siri.siri21.EstimatedCall;
+import uk.org.siri.siri21.EstimatedTimetableDeliveryStructure;
+import uk.org.siri.siri21.EstimatedVehicleJourney;
+import uk.org.siri.siri21.QuayRefStructure;
+import uk.org.siri.siri21.RecordedCall;
+import uk.org.siri.siri21.StopAssignmentStructure;
 import uk.org.siri.www.siri.EstimatedCallStructure;
 import uk.org.siri.www.siri.EstimatedVehicleJourneyStructure;
 import uk.org.siri.www.siri.EstimatedVersionFrameStructure;
@@ -35,8 +35,8 @@ public class EstimatedTimetablePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.EstimatedVersionFrameStructure map(EstimatedVersionFrameStructure estimatedVersionFrameStructure) {
-        final uk.org.siri.siri20.EstimatedVersionFrameStructure mapped = new uk.org.siri.siri20.EstimatedVersionFrameStructure();
+    private static uk.org.siri.siri21.EstimatedVersionFrameStructure map(EstimatedVersionFrameStructure estimatedVersionFrameStructure) {
+        final uk.org.siri.siri21.EstimatedVersionFrameStructure mapped = new uk.org.siri.siri21.EstimatedVersionFrameStructure();
         final List<EstimatedVehicleJourneyStructure> estimatedVehicleJourneyList = estimatedVersionFrameStructure.getEstimatedVehicleJourneyList();
         for (EstimatedVehicleJourneyStructure estimatedVehicleJourneyStructure : estimatedVehicleJourneyList) {
             mapped.getEstimatedVehicleJourneies().add(map(estimatedVehicleJourneyStructure));

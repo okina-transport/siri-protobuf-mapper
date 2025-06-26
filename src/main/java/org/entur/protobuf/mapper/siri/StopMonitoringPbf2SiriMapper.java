@@ -1,6 +1,6 @@
 package org.entur.protobuf.mapper.siri;
 
-import uk.org.siri.siri20.StopMonitoringDeliveryStructure;
+import uk.org.siri.siri21.StopMonitoringDeliveryStructure;
 import uk.org.siri.www.siri.*;
 
 
@@ -27,9 +27,9 @@ public class StopMonitoringPbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.MonitoredStopVisit map(uk.org.siri.www.siri.MonitoredStopVisitStructure monitoredStopVisitStructure) {
+    private static uk.org.siri.siri21.MonitoredStopVisit map(uk.org.siri.www.siri.MonitoredStopVisitStructure monitoredStopVisitStructure) {
 
-        uk.org.siri.siri20.MonitoredStopVisit monitoredStopVisit = new uk.org.siri.siri20.MonitoredStopVisit();
+        uk.org.siri.siri21.MonitoredStopVisit monitoredStopVisit = new uk.org.siri.siri21.MonitoredStopVisit();
         if (monitoredStopVisitStructure.getRecordedAtTime() != null) {
             monitoredStopVisit.setRecordedAtTime(map(monitoredStopVisitStructure.getRecordedAtTime()));
         }
@@ -49,9 +49,9 @@ public class StopMonitoringPbf2SiriMapper extends CommonMapper {
     }
 
 
-    private static uk.org.siri.siri20.MonitoredVehicleJourneyStructure map(uk.org.siri.www.siri.MonitoredVehicleJourneyStructure monitoredVehicleJourney) {
+    private static uk.org.siri.siri21.MonitoredVehicleJourneyStructure map(uk.org.siri.www.siri.MonitoredVehicleJourneyStructure monitoredVehicleJourney) {
 
-        uk.org.siri.siri20.MonitoredVehicleJourneyStructure struct = new uk.org.siri.siri20.MonitoredVehicleJourneyStructure();
+        uk.org.siri.siri21.MonitoredVehicleJourneyStructure struct = new uk.org.siri.siri21.MonitoredVehicleJourneyStructure();
         if (monitoredVehicleJourney.getLineRef() != null) {
             struct.setLineRef(map(monitoredVehicleJourney.getLineRef()));
         }
@@ -137,8 +137,8 @@ public class StopMonitoringPbf2SiriMapper extends CommonMapper {
         return struct;
     }
 
-    private static uk.org.siri.siri20.MonitoredCallStructure map(uk.org.siri.www.siri.MonitoredCallStructure monitoredCall) {
-        uk.org.siri.siri20.MonitoredCallStructure struct = new uk.org.siri.siri20.MonitoredCallStructure();
+    private static uk.org.siri.siri21.MonitoredCallStructure map(uk.org.siri.www.siri.MonitoredCallStructure monitoredCall) {
+        uk.org.siri.siri21.MonitoredCallStructure struct = new uk.org.siri.siri21.MonitoredCallStructure();
         if (monitoredCall.getStopPointRef() != null){
             struct.setStopPointRef(map(monitoredCall.getStopPointRef()));
         }
@@ -197,8 +197,8 @@ if (monitoredCall.getAimedArrivalTime() != null){
     }
 
 
-    private static uk.org.siri.siri20.StopAssignmentStructure map(uk.org.siri.www.siri.StopAssignmentStructure stopAssignmentStructure) {
-        uk.org.siri.siri20.StopAssignmentStructure struct = new uk.org.siri.siri20.StopAssignmentStructure();
+    private static uk.org.siri.siri21.StopAssignmentStructure map(uk.org.siri.www.siri.StopAssignmentStructure stopAssignmentStructure) {
+        uk.org.siri.siri21.StopAssignmentStructure struct = new uk.org.siri.siri21.StopAssignmentStructure();
 
         if (stopAssignmentStructure.getActualQuayRef() != null){
             struct.setActualQuayRef(map(stopAssignmentStructure.getActualQuayRef()));
@@ -222,14 +222,14 @@ if (monitoredCall.getAimedArrivalTime() != null){
     }
 
 
-    private static uk.org.siri.siri20.QuayRefStructure map(uk.org.siri.www.siri.QuayRefStructure quayRef) {
-        uk.org.siri.siri20.QuayRefStructure struct = new uk.org.siri.siri20.QuayRefStructure();
+    private static uk.org.siri.siri21.QuayRefStructure map(uk.org.siri.www.siri.QuayRefStructure quayRef) {
+        uk.org.siri.siri21.QuayRefStructure struct = new uk.org.siri.siri21.QuayRefStructure();
         struct.setValue(quayRef != null ? quayRef.getValue() : "");
         return struct;
     }
 
-    private static uk.org.siri.siri20.MonitoringRefStructure map(uk.org.siri.www.siri.MonitoringRefStructure monitoredStopVisitStructure) {
-        uk.org.siri.siri20.MonitoringRefStructure struct = new uk.org.siri.siri20.MonitoringRefStructure();
+    private static uk.org.siri.siri21.MonitoringRefStructure map(uk.org.siri.www.siri.MonitoringRefStructure monitoredStopVisitStructure) {
+        uk.org.siri.siri21.MonitoringRefStructure struct = new uk.org.siri.siri21.MonitoringRefStructure();
         struct.setValue(monitoredStopVisitStructure != null ? monitoredStopVisitStructure.getValue() : "");
         return struct;
     }

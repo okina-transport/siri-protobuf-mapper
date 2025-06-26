@@ -1,9 +1,9 @@
 package org.entur.protobuf.mapper;
 
 import org.entur.protobuf.mapper.siri.*;
-import uk.org.siri.siri20.DataReadyRequestStructure;
-import uk.org.siri.siri20.ServiceDelivery;
-import uk.org.siri.siri20.Siri;
+
+import uk.org.siri.siri21.ServiceDelivery;
+import uk.org.siri.siri21.Siri;
 import uk.org.siri.www.siri.*;
 
 class Pbf2JaxbMapper extends CommonMapper {

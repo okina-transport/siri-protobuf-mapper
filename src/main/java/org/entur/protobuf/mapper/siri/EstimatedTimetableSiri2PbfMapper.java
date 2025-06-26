@@ -1,19 +1,19 @@
 package org.entur.protobuf.mapper.siri;
 
-import uk.org.siri.siri20.DatedVehicleJourneyRef;
-import uk.org.siri.siri20.EstimatedCall;
-import uk.org.siri.siri20.EstimatedTimetableDeliveryStructure;
-import uk.org.siri.siri20.EstimatedVehicleJourney;
-import uk.org.siri.siri20.EstimatedVersionFrameStructure;
-import uk.org.siri.siri20.JourneyPatternRef;
-import uk.org.siri.siri20.NaturalLanguagePlaceNameStructure;
-import uk.org.siri.siri20.NaturalLanguageStringStructure;
-import uk.org.siri.siri20.RecordedCall;
-import uk.org.siri.siri20.ServiceFeatureRef;
-import uk.org.siri.siri20.SituationRef;
-import uk.org.siri.siri20.SituationSimpleRef;
-import uk.org.siri.siri20.VehicleJourneyRef;
-import uk.org.siri.siri20.VehicleModesEnumeration;
+import uk.org.siri.siri21.DatedVehicleJourneyRef;
+import uk.org.siri.siri21.EstimatedCall;
+import uk.org.siri.siri21.EstimatedTimetableDeliveryStructure;
+import uk.org.siri.siri21.EstimatedVehicleJourney;
+import uk.org.siri.siri21.EstimatedVersionFrameStructure;
+import uk.org.siri.siri21.JourneyPatternRef;
+import uk.org.siri.siri21.NaturalLanguagePlaceNameStructure;
+import uk.org.siri.siri21.NaturalLanguageStringStructure;
+import uk.org.siri.siri21.RecordedCall;
+import uk.org.siri.siri21.ServiceFeatureRef;
+import uk.org.siri.siri21.SituationRef;
+import uk.org.siri.siri21.SituationSimpleRef;
+import uk.org.siri.siri21.VehicleJourneyRef;
+import uk.org.siri.siri21.VehicleModesEnumeration;
 import uk.org.siri.www.siri.DatedVehicleJourneyRefStructure;
 import uk.org.siri.www.siri.EstimatedCallStructure;
 import uk.org.siri.www.siri.EstimatedVehicleJourneyStructure;
@@ -162,7 +162,7 @@ public class EstimatedTimetableSiri2PbfMapper extends CommonMapper {
             builder.setVehicleJourneyRef(map(journey.getVehicleJourneyRef()));
         }
         if (journey.getAdditionalVehicleJourneyReves() != null) {
-            for (uk.org.siri.siri20.FramedVehicleJourneyRefStructure additionalVehicleJourneyRef : journey.getAdditionalVehicleJourneyReves()) {
+            for (uk.org.siri.siri21.FramedVehicleJourneyRefStructure additionalVehicleJourneyRef : journey.getAdditionalVehicleJourneyReves()) {
                 builder.addAdditionalVehicleJourneyRef(map(additionalVehicleJourneyRef));
             }
         }
@@ -209,20 +209,20 @@ public class EstimatedTimetableSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static SimpleContactStructure.Builder map(uk.org.siri.siri20.SimpleContactStructure publicContact) {
+    private static SimpleContactStructure.Builder map(uk.org.siri.siri21.SimpleContactStructure publicContact) {
         SimpleContactStructure.Builder builder = SimpleContactStructure.newBuilder();
         builder.setPhoneNumber(publicContact.getPhoneNumber());
         builder.setUrl(publicContact.getUrl());
         return builder;
     }
 
-    private static GroupOfLinesRefStructure.Builder map(uk.org.siri.siri20.GroupOfLinesRefStructure groupOfLinesRef) {
+    private static GroupOfLinesRefStructure.Builder map(uk.org.siri.siri21.GroupOfLinesRefStructure groupOfLinesRef) {
         GroupOfLinesRefStructure.Builder builder = GroupOfLinesRefStructure.newBuilder();
         builder.setValue(groupOfLinesRef.getValue());
         return builder;
     }
 
-    private static RouteRefStructure.Builder map(uk.org.siri.siri20.RouteRefStructure routeRef) {
+    private static RouteRefStructure.Builder map(uk.org.siri.siri21.RouteRefStructure routeRef) {
         RouteRefStructure.Builder builder = RouteRefStructure.newBuilder();
         builder.setValue(routeRef.getValue());
         return builder;
@@ -334,7 +334,7 @@ public class EstimatedTimetableSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static StopAssignmentStructure.Builder map(uk.org.siri.siri20.StopAssignmentStructure stopAssignment) {
+    private static StopAssignmentStructure.Builder map(uk.org.siri.siri21.StopAssignmentStructure stopAssignment) {
         final StopAssignmentStructure.Builder builder = StopAssignmentStructure.newBuilder();
         if (stopAssignment.getAimedQuayRef() != null) {
             builder.setAimedQuayRef(QuayRefStructure.newBuilder().setValue(stopAssignment.getAimedQuayRef().getValue()));

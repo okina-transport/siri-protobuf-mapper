@@ -8,7 +8,7 @@ import uk.org.ifopt.siri20.StopPlaceComponentRefStructure;
 import uk.org.ifopt.siri20.StopPlaceRef;
 import uk.org.ifopt.www.acsb.AccessibilityLimitationStructure;
 import uk.org.ifopt.www.ifopt.StopPlaceRefStructure;
-import uk.org.siri.siri20.*;
+import uk.org.siri.siri21.*;
 import uk.org.siri.www.siri.AffectedLineStructure;
 import uk.org.siri.www.siri.AffectedOperatorStructure;
 import uk.org.siri.www.siri.AffectedRouteStructure;
@@ -236,8 +236,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.AffectedVehicleJourneyStructure map(AffectedVehicleJourneyStructure affectedVehicleJourneyStructure) {
-        uk.org.siri.siri20.AffectedVehicleJourneyStructure mapped = new uk.org.siri.siri20.AffectedVehicleJourneyStructure();
+    private static uk.org.siri.siri21.AffectedVehicleJourneyStructure map(AffectedVehicleJourneyStructure affectedVehicleJourneyStructure) {
+        uk.org.siri.siri21.AffectedVehicleJourneyStructure mapped = new uk.org.siri.siri21.AffectedVehicleJourneyStructure();
         if (affectedVehicleJourneyStructure.getVehicleJourneyRefList() != null) {
             for (VehicleJourneyRefStructure vehicleJourneyRefStructure : affectedVehicleJourneyStructure.getVehicleJourneyRefList()) {
                 mapped.getVehicleJourneyReves().add(map(vehicleJourneyRefStructure));
@@ -312,8 +312,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.AffectedStopPlaceStructure map(AffectedStopPlaceStructure affectedStopPlaceStructure) {
-        uk.org.siri.siri20.AffectedStopPlaceStructure mapped = new uk.org.siri.siri20.AffectedStopPlaceStructure();
+    private static uk.org.siri.siri21.AffectedStopPlaceStructure map(AffectedStopPlaceStructure affectedStopPlaceStructure) {
+        uk.org.siri.siri21.AffectedStopPlaceStructure mapped = new uk.org.siri.siri21.AffectedStopPlaceStructure();
         if (affectedStopPlaceStructure.hasAccessibilityAssessment()) {
             mapped.setAccessibilityAssessment(map(affectedStopPlaceStructure.getAccessibilityAssessment()));
         }
@@ -332,8 +332,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.AffectedStopPlaceStructure.AffectedComponents map(AffectedStopPlaceStructure.AffectedComponentsType affectedComponents) {
-        uk.org.siri.siri20.AffectedStopPlaceStructure.AffectedComponents mapped = new uk.org.siri.siri20.AffectedStopPlaceStructure.AffectedComponents();
+    private static uk.org.siri.siri21.AffectedStopPlaceStructure.AffectedComponents map(AffectedStopPlaceStructure.AffectedComponentsType affectedComponents) {
+        uk.org.siri.siri21.AffectedStopPlaceStructure.AffectedComponents mapped = new uk.org.siri.siri21.AffectedStopPlaceStructure.AffectedComponents();
         if (affectedComponents.getAffectedComponentList() != null) {
             for (AffectedStopPlaceComponentStructure affectedStopPlaceComponentStructure : affectedComponents.getAffectedComponentList()) {
                 mapped.getAffectedComponents().add(map(affectedStopPlaceComponentStructure));
@@ -342,8 +342,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.AffectedStopPlaceComponentStructure map(AffectedStopPlaceComponentStructure affectedStopPlaceComponentStructure) {
-        uk.org.siri.siri20.AffectedStopPlaceComponentStructure mapped = new uk.org.siri.siri20.AffectedStopPlaceComponentStructure();
+    private static uk.org.siri.siri21.AffectedStopPlaceComponentStructure map(AffectedStopPlaceComponentStructure affectedStopPlaceComponentStructure) {
+        uk.org.siri.siri21.AffectedStopPlaceComponentStructure mapped = new uk.org.siri.siri21.AffectedStopPlaceComponentStructure();
         if (affectedStopPlaceComponentStructure.hasComponentRef()) {
             mapped.setComponentRef(map(affectedStopPlaceComponentStructure.getComponentRef()));
         }
@@ -368,8 +368,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.SituationVersion map(SituationVersion version) {
-        uk.org.siri.siri20.SituationVersion mapped = new uk.org.siri.siri20.SituationVersion();
+    private static uk.org.siri.siri21.SituationVersion map(SituationVersion version) {
+        uk.org.siri.siri21.SituationVersion mapped = new uk.org.siri.siri21.SituationVersion();
         mapped.setValue(BigInteger.valueOf(version.getValue()));
         return mapped;
     }
@@ -472,8 +472,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.AffectedLineStructure map(AffectedLineStructure affectedLineStructure) {
-        uk.org.siri.siri20.AffectedLineStructure mapped = new uk.org.siri.siri20.AffectedLineStructure();
+    private static uk.org.siri.siri21.AffectedLineStructure map(AffectedLineStructure affectedLineStructure) {
+        uk.org.siri.siri21.AffectedLineStructure mapped = new uk.org.siri.siri21.AffectedLineStructure();
         if (affectedLineStructure.hasLineRef()) {
             mapped.setLineRef(map(affectedLineStructure.getLineRef()));
         }
@@ -486,8 +486,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.AffectedLineStructure.Routes map(AffectedLineStructure.RoutesType routes) {
-        uk.org.siri.siri20.AffectedLineStructure.Routes mapped = new uk.org.siri.siri20.AffectedLineStructure.Routes();
+    private static uk.org.siri.siri21.AffectedLineStructure.Routes map(AffectedLineStructure.RoutesType routes) {
+        uk.org.siri.siri21.AffectedLineStructure.Routes mapped = new uk.org.siri.siri21.AffectedLineStructure.Routes();
         if (routes.getAffectedRouteList() != null) {
             for (AffectedRouteStructure affectedRouteStructure : routes.getAffectedRouteList()) {
                 mapped.getAffectedRoutes().add(map(affectedRouteStructure));
@@ -496,8 +496,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.AffectedRouteStructure map(AffectedRouteStructure affectedRouteStructure) {
-        uk.org.siri.siri20.AffectedRouteStructure mapped = new uk.org.siri.siri20.AffectedRouteStructure();
+    private static uk.org.siri.siri21.AffectedRouteStructure map(AffectedRouteStructure affectedRouteStructure) {
+        uk.org.siri.siri21.AffectedRouteStructure mapped = new uk.org.siri.siri21.AffectedRouteStructure();
         if (affectedRouteStructure.hasRouteRef()) {
             mapped.setRouteRef(map(affectedRouteStructure.getRouteRef()));
         }
@@ -507,8 +507,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.AffectedRouteStructure.StopPoints map(AffectedRouteStructure.StopPointsType stopPoints) {
-        uk.org.siri.siri20.AffectedRouteStructure.StopPoints mapped = new uk.org.siri.siri20.AffectedRouteStructure.StopPoints();
+    private static uk.org.siri.siri21.AffectedRouteStructure.StopPoints map(AffectedRouteStructure.StopPointsType stopPoints) {
+        uk.org.siri.siri21.AffectedRouteStructure.StopPoints mapped = new uk.org.siri.siri21.AffectedRouteStructure.StopPoints();
         if (stopPoints.getSequenceWrapperList() != null) {
             for (AffectedRouteStructure.StopPointsType.SequenceWrapper_StopPointsType stopPointsType : stopPoints.getSequenceWrapperList()) {
                 Serializable stopPoint = map(stopPointsType);
@@ -551,8 +551,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.AffectedOperatorStructure map(AffectedOperatorStructure affectedOperatorStructure) {
-        uk.org.siri.siri20.AffectedOperatorStructure mapped = new uk.org.siri.siri20.AffectedOperatorStructure();
+    private static uk.org.siri.siri21.AffectedOperatorStructure map(AffectedOperatorStructure affectedOperatorStructure) {
+        uk.org.siri.siri21.AffectedOperatorStructure mapped = new uk.org.siri.siri21.AffectedOperatorStructure();
         if (affectedOperatorStructure.hasOperatorRef()) {
             mapped.setOperatorRef(map(affectedOperatorStructure.getOperatorRef()));
         }
@@ -569,8 +569,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return mapped;
     }
 
-    private static uk.org.siri.siri20.InfoLinkStructure map(InfoLinkStructure infoLinkStructure) {
-        uk.org.siri.siri20.InfoLinkStructure mapped = new uk.org.siri.siri20.InfoLinkStructure();
+    private static uk.org.siri.siri21.InfoLinkStructure map(InfoLinkStructure infoLinkStructure) {
+        uk.org.siri.siri21.InfoLinkStructure mapped = new uk.org.siri.siri21.InfoLinkStructure();
         mapped.setUri(infoLinkStructure.getUri());
         if (infoLinkStructure.getLabelList() != null) {
             for (NaturalLanguageStringStructure naturalLanguageStringStructure : infoLinkStructure.getLabelList()) {
@@ -590,8 +590,8 @@ public class SituationExchangePbf2SiriMapper extends CommonMapper {
         return null;
     }
 
-    private static uk.org.siri.siri20.HalfOpenTimestampOutputRangeStructure map(HalfOpenTimestampOutputRangeStructure halfOpenTimestampOutputRangeStructure) {
-        uk.org.siri.siri20.HalfOpenTimestampOutputRangeStructure mapped = new uk.org.siri.siri20.HalfOpenTimestampOutputRangeStructure();
+    private static uk.org.siri.siri21.HalfOpenTimestampOutputRangeStructure map(HalfOpenTimestampOutputRangeStructure halfOpenTimestampOutputRangeStructure) {
+        uk.org.siri.siri21.HalfOpenTimestampOutputRangeStructure mapped = new uk.org.siri.siri21.HalfOpenTimestampOutputRangeStructure();
         if (halfOpenTimestampOutputRangeStructure.hasStartTime()) {
             mapped.setStartTime(map(halfOpenTimestampOutputRangeStructure.getStartTime()));
         }

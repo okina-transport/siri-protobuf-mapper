@@ -3,8 +3,8 @@ package org.entur.protobuf.mapper.siri;
 import eu.datex2.schema._2_0rc1._2_0.DelaysTypeEnum;
 import uk.org.ifopt.www.ifopt.AccessibilityFeatureEnumeration;
 import uk.org.ifopt.www.ifopt.StopPlaceComponentTypeEnumeration;
-import uk.org.siri.siri20.RoutePointTypeEnumeration;
-import uk.org.siri.siri20.VehicleModesEnumeration;
+import uk.org.siri.siri21.RoutePointTypeEnumeration;
+import uk.org.siri.siri21.VehicleModesEnumeration;
 import uk.org.siri.www.siri.*;
 
 public class EnumerationMapper {
@@ -108,7 +108,7 @@ public class EnumerationMapper {
         return null;
     }
 
-    protected static WaterSubmodesOfTransportEnumeration map(uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration submode) {
+    protected static WaterSubmodesOfTransportEnumeration map(uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case HIGH_SPEED_PASSENGER_SERVICE:
                 return WaterSubmodesOfTransportEnumeration.WATER_SUBMODES_OF_TRANSPORT_ENUMERATION_HIGH_SPEED_PASSENGER_SERVICE;
@@ -135,33 +135,33 @@ public class EnumerationMapper {
         }
     }
     
-    protected static uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration map(WaterSubmodesOfTransportEnumeration submode) {
+    protected static uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration map(WaterSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case WATER_SUBMODES_OF_TRANSPORT_ENUMERATION_HIGH_SPEED_PASSENGER_SERVICE:
-                return uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration.HIGH_SPEED_PASSENGER_SERVICE;
+                return uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration.HIGH_SPEED_PASSENGER_SERVICE;
             case WATER_SUBMODES_OF_TRANSPORT_ENUMERATION_HIGH_SPEED_VEHICLE_SERVICE:
-                return uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration.HIGH_SPEED_VEHICLE_SERVICE;
+                return uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration.HIGH_SPEED_VEHICLE_SERVICE;
             case WATER_SUBMODES_OF_TRANSPORT_ENUMERATION_INTERNATIONAL_CAR_FERRY_SERVICE:
-                return uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration.INTERNATIONAL_CAR_FERRY_SERVICE;
+                return uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration.INTERNATIONAL_CAR_FERRY_SERVICE;
             case WATER_SUBMODES_OF_TRANSPORT_ENUMERATION_INTERNATIONAL_PASSENGER_FERRY:
-                return uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration.INTERNATIONAL_PASSENGER_FERRY;
+                return uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration.INTERNATIONAL_PASSENGER_FERRY;
             case WATER_SUBMODES_OF_TRANSPORT_ENUMERATION_LOCAL_CAR_FERRY_SERVICE:
-                return uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration.LOCAL_CAR_FERRY_SERVICE;
+                return uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration.LOCAL_CAR_FERRY_SERVICE;
             case WATER_SUBMODES_OF_TRANSPORT_ENUMERATION_LOCAL_PASSENGER_FERRY:
-                return uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration.LOCAL_PASSENGER_FERRY;
+                return uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration.LOCAL_PASSENGER_FERRY;
             case WATER_SUBMODES_OF_TRANSPORT_ENUMERATION_NATIONAL_CAR_FERRY_SERVICE:
-                return uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration.NATIONAL_CAR_FERRY_SERVICE;
+                return uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration.NATIONAL_CAR_FERRY_SERVICE;
             case WATER_SUBMODES_OF_TRANSPORT_ENUMERATION_NATIONAL_PASSENGER_FERRY:
-                return uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration.NATIONAL_PASSENGER_FERRY;
+                return uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration.NATIONAL_PASSENGER_FERRY;
             case WATER_SUBMODES_OF_TRANSPORT_ENUMERATION_SIGHTSEEING_SERVICE:
-                return uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration.SIGHTSEEING_SERVICE;
+                return uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration.SIGHTSEEING_SERVICE;
             case WATER_SUBMODES_OF_TRANSPORT_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.WaterSubmodesOfTransportEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.WaterSubmodesOfTransportEnumeration.UNKNOWN;
         }
         return null;
     }
 
-    protected static TramSubmodesOfTransportEnumeration map(uk.org.siri.siri20.TramSubmodesOfTransportEnumeration submode) {
+    protected static TramSubmodesOfTransportEnumeration map(uk.org.siri.siri21.TramSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case LOCAL_TRAM_SERVICE:
                 return TramSubmodesOfTransportEnumeration.TRAM_SUBMODES_OF_TRANSPORT_ENUMERATION_LOCAL_TRAM_SERVICE;
@@ -171,17 +171,17 @@ public class EnumerationMapper {
                 return TramSubmodesOfTransportEnumeration.TRAM_SUBMODES_OF_TRANSPORT_ENUMERATION_UNDEFINED_TRAM_SERVICE;
         }
     }
-    protected static uk.org.siri.siri20.TramSubmodesOfTransportEnumeration map(TramSubmodesOfTransportEnumeration submode) {
+    protected static uk.org.siri.siri21.TramSubmodesOfTransportEnumeration map(TramSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case TRAM_SUBMODES_OF_TRANSPORT_ENUMERATION_LOCAL_TRAM_SERVICE:
-                return uk.org.siri.siri20.TramSubmodesOfTransportEnumeration.LOCAL_TRAM_SERVICE;
+                return uk.org.siri.siri21.TramSubmodesOfTransportEnumeration.LOCAL_TRAM_SERVICE;
             case TRAM_SUBMODES_OF_TRANSPORT_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.TramSubmodesOfTransportEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.TramSubmodesOfTransportEnumeration.UNKNOWN;
         }
         return null;
     }
 
-    protected static RailSubmodesOfTransportEnumeration map(uk.org.siri.siri20.RailSubmodesOfTransportEnumeration submode) {
+    protected static RailSubmodesOfTransportEnumeration map(uk.org.siri.siri21.RailSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case INTERBATIONAL:
                 return RailSubmodesOfTransportEnumeration.RAIL_SUBMODES_OF_TRANSPORT_ENUMERATION_INTERBATIONAL;
@@ -206,31 +206,31 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.RailSubmodesOfTransportEnumeration map(RailSubmodesOfTransportEnumeration submode) {
+    protected static uk.org.siri.siri21.RailSubmodesOfTransportEnumeration map(RailSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case RAIL_SUBMODES_OF_TRANSPORT_ENUMERATION_INTERBATIONAL:
-                return uk.org.siri.siri20.RailSubmodesOfTransportEnumeration.INTERBATIONAL;
+                return uk.org.siri.siri21.RailSubmodesOfTransportEnumeration.INTERBATIONAL;
             case RAIL_SUBMODES_OF_TRANSPORT_ENUMERATION_INTER_REGIONAL_RAIL_SERVICE:
-                return uk.org.siri.siri20.RailSubmodesOfTransportEnumeration.INTER_REGIONAL_RAIL_SERVICE;
+                return uk.org.siri.siri21.RailSubmodesOfTransportEnumeration.INTER_REGIONAL_RAIL_SERVICE;
             case RAIL_SUBMODES_OF_TRANSPORT_ENUMERATION_LOCAL:
-                return uk.org.siri.siri20.RailSubmodesOfTransportEnumeration.LOCAL;
+                return uk.org.siri.siri21.RailSubmodesOfTransportEnumeration.LOCAL;
             case RAIL_SUBMODES_OF_TRANSPORT_ENUMERATION_LONG_DISTANCE_TRAIN:
-                return uk.org.siri.siri20.RailSubmodesOfTransportEnumeration.LONG_DISTANCE_TRAIN;
+                return uk.org.siri.siri21.RailSubmodesOfTransportEnumeration.LONG_DISTANCE_TRAIN;
             case RAIL_SUBMODES_OF_TRANSPORT_ENUMERATION_SLEEPER_RAIL_SERVICE:
-                return uk.org.siri.siri20.RailSubmodesOfTransportEnumeration.SLEEPER_RAIL_SERVICE;
+                return uk.org.siri.siri21.RailSubmodesOfTransportEnumeration.SLEEPER_RAIL_SERVICE;
             case RAIL_SUBMODES_OF_TRANSPORT_ENUMERATION_REGIONAL_RAIL:
-                return uk.org.siri.siri20.RailSubmodesOfTransportEnumeration.REGIONAL_RAIL;
+                return uk.org.siri.siri21.RailSubmodesOfTransportEnumeration.REGIONAL_RAIL;
             case RAIL_SUBMODES_OF_TRANSPORT_ENUMERATION_SPECIAL_TRAIN_SERVICE:
-                return uk.org.siri.siri20.RailSubmodesOfTransportEnumeration.SPECIAL_TRAIN_SERVICE;
+                return uk.org.siri.siri21.RailSubmodesOfTransportEnumeration.SPECIAL_TRAIN_SERVICE;
             case RAIL_SUBMODES_OF_TRANSPORT_ENUMERATION_TOURIST_RAILWAY:
-                return uk.org.siri.siri20.RailSubmodesOfTransportEnumeration.TOURIST_RAILWAY;
+                return uk.org.siri.siri21.RailSubmodesOfTransportEnumeration.TOURIST_RAILWAY;
             case RAIL_SUBMODES_OF_TRANSPORT_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.RailSubmodesOfTransportEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.RailSubmodesOfTransportEnumeration.UNKNOWN;
         }
         return null;
     }
 
-    protected static MetroSubmodesOfTransportEnumeration map(uk.org.siri.siri20.MetroSubmodesOfTransportEnumeration submode) {
+    protected static MetroSubmodesOfTransportEnumeration map(uk.org.siri.siri21.MetroSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case METRO:
                 return MetroSubmodesOfTransportEnumeration.METRO_SUBMODES_OF_TRANSPORT_ENUMERATION_METRO;
@@ -242,19 +242,19 @@ public class EnumerationMapper {
                 return MetroSubmodesOfTransportEnumeration.METRO_SUBMODES_OF_TRANSPORT_ENUMERATION_UNDEFINED;
         }
     }
-    protected static uk.org.siri.siri20.MetroSubmodesOfTransportEnumeration map(MetroSubmodesOfTransportEnumeration submode) {
+    protected static uk.org.siri.siri21.MetroSubmodesOfTransportEnumeration map(MetroSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case METRO_SUBMODES_OF_TRANSPORT_ENUMERATION_METRO:
-                return uk.org.siri.siri20.MetroSubmodesOfTransportEnumeration.METRO;
+                return uk.org.siri.siri21.MetroSubmodesOfTransportEnumeration.METRO;
             case METRO_SUBMODES_OF_TRANSPORT_ENUMERATION_URBAN_RAILWAY:
-                return uk.org.siri.siri20.MetroSubmodesOfTransportEnumeration.URBAN_RAILWAY;
+                return uk.org.siri.siri21.MetroSubmodesOfTransportEnumeration.URBAN_RAILWAY;
             case METRO_SUBMODES_OF_TRANSPORT_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.MetroSubmodesOfTransportEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.MetroSubmodesOfTransportEnumeration.UNKNOWN;
         }
         return null;
     }
 
-    protected static CoachSubmodesOfTransportEnumeration map(uk.org.siri.siri20.CoachSubmodesOfTransportEnumeration submode) {
+    protected static CoachSubmodesOfTransportEnumeration map(uk.org.siri.siri21.CoachSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case INTERNATIONAL_COACH_SERVICE:
                 return CoachSubmodesOfTransportEnumeration.COACH_SUBMODES_OF_TRANSPORT_ENUMERATION_INTERNATIONAL_COACH_SERVICE;
@@ -268,21 +268,21 @@ public class EnumerationMapper {
                 return CoachSubmodesOfTransportEnumeration.COACH_SUBMODES_OF_TRANSPORT_ENUMERATION_UNDEFINED;
         }
     }
-    protected static uk.org.siri.siri20.CoachSubmodesOfTransportEnumeration map(CoachSubmodesOfTransportEnumeration submode) {
+    protected static uk.org.siri.siri21.CoachSubmodesOfTransportEnumeration map(CoachSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case COACH_SUBMODES_OF_TRANSPORT_ENUMERATION_INTERNATIONAL_COACH_SERVICE:
-                return uk.org.siri.siri20.CoachSubmodesOfTransportEnumeration.INTERNATIONAL_COACH_SERVICE;
+                return uk.org.siri.siri21.CoachSubmodesOfTransportEnumeration.INTERNATIONAL_COACH_SERVICE;
             case COACH_SUBMODES_OF_TRANSPORT_ENUMERATION_NATIONAL_COACH_SERVICE:
-                return uk.org.siri.siri20.CoachSubmodesOfTransportEnumeration.NATIONAL_COACH_SERVICE;
+                return uk.org.siri.siri21.CoachSubmodesOfTransportEnumeration.NATIONAL_COACH_SERVICE;
             case COACH_SUBMODES_OF_TRANSPORT_ENUMERATION_TOURIST_COACH_SERVICE:
-                return uk.org.siri.siri20.CoachSubmodesOfTransportEnumeration.TOURIST_COACH_SERVICE;
+                return uk.org.siri.siri21.CoachSubmodesOfTransportEnumeration.TOURIST_COACH_SERVICE;
             case COACH_SUBMODES_OF_TRANSPORT_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.CoachSubmodesOfTransportEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.CoachSubmodesOfTransportEnumeration.UNKNOWN;
         }
         return null;
     }
 
-    protected static AirSubmodesOfTransportEnumeration map(uk.org.siri.siri20.AirSubmodesOfTransportEnumeration submode) {
+    protected static AirSubmodesOfTransportEnumeration map(uk.org.siri.siri21.AirSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case DOMESTIC_FLIGHT:
                 return AirSubmodesOfTransportEnumeration.AIR_SUBMODES_OF_TRANSPORT_ENUMERATION_DOMESTIC_FLIGHT;
@@ -296,21 +296,21 @@ public class EnumerationMapper {
                 return AirSubmodesOfTransportEnumeration.AIR_SUBMODES_OF_TRANSPORT_ENUMERATION_UNDEFINED_AIRCRAFT_SERVICE;
         }
     }
-    protected static uk.org.siri.siri20.AirSubmodesOfTransportEnumeration map(AirSubmodesOfTransportEnumeration submode) {
+    protected static uk.org.siri.siri21.AirSubmodesOfTransportEnumeration map(AirSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case AIR_SUBMODES_OF_TRANSPORT_ENUMERATION_DOMESTIC_FLIGHT:
-                return uk.org.siri.siri20.AirSubmodesOfTransportEnumeration.DOMESTIC_FLIGHT;
+                return uk.org.siri.siri21.AirSubmodesOfTransportEnumeration.DOMESTIC_FLIGHT;
             case AIR_SUBMODES_OF_TRANSPORT_ENUMERATION_HELICOPTER_SERVICE:
-                return uk.org.siri.siri20.AirSubmodesOfTransportEnumeration.HELICOPTER_SERVICE;
+                return uk.org.siri.siri21.AirSubmodesOfTransportEnumeration.HELICOPTER_SERVICE;
             case AIR_SUBMODES_OF_TRANSPORT_ENUMERATION_INTERNATIONAL_FLIGHT:
-                return uk.org.siri.siri20.AirSubmodesOfTransportEnumeration.INTERNATIONAL_FLIGHT;
+                return uk.org.siri.siri21.AirSubmodesOfTransportEnumeration.INTERNATIONAL_FLIGHT;
             case AIR_SUBMODES_OF_TRANSPORT_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.AirSubmodesOfTransportEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.AirSubmodesOfTransportEnumeration.UNKNOWN;
         }
         return null;
     }
 
-    protected static BusSubmodesOfTransportEnumeration map(uk.org.siri.siri20.BusSubmodesOfTransportEnumeration submode) {
+    protected static BusSubmodesOfTransportEnumeration map(uk.org.siri.siri21.BusSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case AIRPORT_LINK_BUS:
                 return BusSubmodesOfTransportEnumeration.BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_AIRPORT_LINK_BUS;
@@ -336,33 +336,33 @@ public class EnumerationMapper {
                 return BusSubmodesOfTransportEnumeration.BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_UNDEFINED;
         }
     }
-    protected static uk.org.siri.siri20.BusSubmodesOfTransportEnumeration map(BusSubmodesOfTransportEnumeration submode) {
+    protected static uk.org.siri.siri21.BusSubmodesOfTransportEnumeration map(BusSubmodesOfTransportEnumeration submode) {
         switch (submode) {
             case BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_AIRPORT_LINK_BUS:
-                return uk.org.siri.siri20.BusSubmodesOfTransportEnumeration.AIRPORT_LINK_BUS;
+                return uk.org.siri.siri21.BusSubmodesOfTransportEnumeration.AIRPORT_LINK_BUS;
             case BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_EXPRESS_BUS:
-                return uk.org.siri.siri20.BusSubmodesOfTransportEnumeration.EXPRESS_BUS;
+                return uk.org.siri.siri21.BusSubmodesOfTransportEnumeration.EXPRESS_BUS;
             case BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_LOCAL_BUS_SERVICE:
-                return uk.org.siri.siri20.BusSubmodesOfTransportEnumeration.LOCAL_BUS_SERVICE;
+                return uk.org.siri.siri21.BusSubmodesOfTransportEnumeration.LOCAL_BUS_SERVICE;
             case BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_NIGHT_BUS:
-                return uk.org.siri.siri20.BusSubmodesOfTransportEnumeration.NIGHT_BUS;
+                return uk.org.siri.siri21.BusSubmodesOfTransportEnumeration.NIGHT_BUS;
             case BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_RAIL_REPLACEMENT_BUS:
-                return uk.org.siri.siri20.BusSubmodesOfTransportEnumeration.RAIL_REPLACEMENT_BUS;
+                return uk.org.siri.siri21.BusSubmodesOfTransportEnumeration.RAIL_REPLACEMENT_BUS;
             case BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_REGIONAL_BUS:
-                return uk.org.siri.siri20.BusSubmodesOfTransportEnumeration.REGIONAL_BUS;
+                return uk.org.siri.siri21.BusSubmodesOfTransportEnumeration.REGIONAL_BUS;
             case BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_SCHOOL_BUS:
-                return uk.org.siri.siri20.BusSubmodesOfTransportEnumeration.SCHOOL_BUS;
+                return uk.org.siri.siri21.BusSubmodesOfTransportEnumeration.SCHOOL_BUS;
             case BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_SHUTTLE_BUS:
-                return uk.org.siri.siri20.BusSubmodesOfTransportEnumeration.SHUTTLE_BUS;
+                return uk.org.siri.siri21.BusSubmodesOfTransportEnumeration.SHUTTLE_BUS;
             case BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_SIGHTSEEING_BUS:
-                return uk.org.siri.siri20.BusSubmodesOfTransportEnumeration.SIGHTSEEING_BUS;
+                return uk.org.siri.siri21.BusSubmodesOfTransportEnumeration.SIGHTSEEING_BUS;
             case BUS_SUBMODES_OF_TRANSPORT_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.BusSubmodesOfTransportEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.BusSubmodesOfTransportEnumeration.UNKNOWN;
         }
         return null;
     }
 
-    protected static VehicleModesOfTransportEnumeration map(uk.org.siri.siri20.VehicleModesOfTransportEnumeration vehicleMode) {
+    protected static VehicleModesOfTransportEnumeration map(uk.org.siri.siri21.VehicleModesOfTransportEnumeration vehicleMode) {
         switch (vehicleMode) {
             case ALL:
                 return VehicleModesOfTransportEnumeration.VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_ALL;
@@ -395,39 +395,39 @@ public class EnumerationMapper {
     }
 
 
-    protected static uk.org.siri.siri20.VehicleModesOfTransportEnumeration map(VehicleModesOfTransportEnumeration vehicleMode) {
+    protected static uk.org.siri.siri21.VehicleModesOfTransportEnumeration map(VehicleModesOfTransportEnumeration vehicleMode) {
         switch (vehicleMode) {
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_ALL:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.ALL;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.ALL;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_AIR:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.AIR;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.AIR;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_BUS:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.BUS;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.BUS;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_COACH:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.COACH;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.COACH;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_FUNICULAR:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.FUNICULAR;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.FUNICULAR;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_METRO:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.METRO;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.METRO;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_RAIL:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.RAIL;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.RAIL;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_TAXI:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.TAXI;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.TAXI;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_TELECABIN:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.TELECABIN;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.TELECABIN;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_TRAM:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.TRAM;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.TRAM;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_WATER:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.WATER;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.WATER;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_SELF_DRIVE:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.SELF_DRIVE;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.SELF_DRIVE;
             case VEHICLE_MODES_OF_TRANSPORT_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.VehicleModesOfTransportEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.VehicleModesOfTransportEnumeration.UNKNOWN;
         }
         return null;
     }
 
-    protected static SeverityEnumeration map(uk.org.siri.siri20.SeverityEnumeration severity) {
+    protected static SeverityEnumeration map(uk.org.siri.siri21.SeverityEnumeration severity) {
         switch (severity) {
             case NO_IMPACT:
                 return SeverityEnumeration.SEVERITY_ENUMERATION_NO_IMPACT;
@@ -448,28 +448,28 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.SeverityEnumeration map(SeverityEnumeration severity) {
+    protected static uk.org.siri.siri21.SeverityEnumeration map(SeverityEnumeration severity) {
         switch (severity) {
             case SEVERITY_ENUMERATION_NO_IMPACT:
-                return uk.org.siri.siri20.SeverityEnumeration.NO_IMPACT;
+                return uk.org.siri.siri21.SeverityEnumeration.NO_IMPACT;
             case SEVERITY_ENUMERATION_VERY_SLIGHT:
-                return uk.org.siri.siri20.SeverityEnumeration.VERY_SLIGHT;
+                return uk.org.siri.siri21.SeverityEnumeration.VERY_SLIGHT;
             case SEVERITY_ENUMERATION_SLIGHT:
-                return uk.org.siri.siri20.SeverityEnumeration.SLIGHT;
+                return uk.org.siri.siri21.SeverityEnumeration.SLIGHT;
             case SEVERITY_ENUMERATION_NORMAL:
-                return uk.org.siri.siri20.SeverityEnumeration.NORMAL;
+                return uk.org.siri.siri21.SeverityEnumeration.NORMAL;
             case SEVERITY_ENUMERATION_SEVERE:
-                return uk.org.siri.siri20.SeverityEnumeration.SEVERE;
+                return uk.org.siri.siri21.SeverityEnumeration.SEVERE;
             case SEVERITY_ENUMERATION_VERY_SEVERE:
-                return uk.org.siri.siri20.SeverityEnumeration.VERY_SEVERE;
+                return uk.org.siri.siri21.SeverityEnumeration.VERY_SEVERE;
             case SEVERITY_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.SeverityEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.SeverityEnumeration.UNKNOWN;
             default:
                 return null;
         }
     }
 
-    protected static AudienceEnumeration map(uk.org.siri.siri20.AudienceEnumeration audience) {
+    protected static AudienceEnumeration map(uk.org.siri.siri21.AudienceEnumeration audience) {
         switch (audience) {
             case PUBLIC:
                 return AudienceEnumeration.AUDIENCE_ENUMERATION_PUBLIC;
@@ -488,27 +488,27 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.AudienceEnumeration map(AudienceEnumeration audience) {
+    protected static uk.org.siri.siri21.AudienceEnumeration map(AudienceEnumeration audience) {
         switch (audience) {
             case AUDIENCE_ENUMERATION_PUBLIC:
-                return uk.org.siri.siri20.AudienceEnumeration.PUBLIC;
+                return uk.org.siri.siri21.AudienceEnumeration.PUBLIC;
             case AUDIENCE_ENUMERATION_EMERGENCY_SERVICES:
-                return uk.org.siri.siri20.AudienceEnumeration.EMERGENCY_SERVICES;
+                return uk.org.siri.siri21.AudienceEnumeration.EMERGENCY_SERVICES;
             case AUDIENCE_ENUMERATION_STAFF:
-                return uk.org.siri.siri20.AudienceEnumeration.STAFF;
+                return uk.org.siri.siri21.AudienceEnumeration.STAFF;
             case AUDIENCE_ENUMERATION_STATION_STAFF:
-                return uk.org.siri.siri20.AudienceEnumeration.STATION_STAFF;
+                return uk.org.siri.siri21.AudienceEnumeration.STATION_STAFF;
             case AUDIENCE_ENUMERATION_MANAGEMENT:
-                return uk.org.siri.siri20.AudienceEnumeration.MANAGEMENT;
+                return uk.org.siri.siri21.AudienceEnumeration.MANAGEMENT;
             case AUDIENCE_ENUMERATION_INFO_SERVICES:
-                return uk.org.siri.siri20.AudienceEnumeration.INFO_SERVICES;
+                return uk.org.siri.siri21.AudienceEnumeration.INFO_SERVICES;
             case AUDIENCE_ENUMERATION_UNSPECIFIED:
             default:
                 return null;
         }
     }
 
-    protected static WorkflowStatusEnumeration map(uk.org.siri.siri20.WorkflowStatusEnumeration progress) {
+    protected static WorkflowStatusEnumeration map(uk.org.siri.siri21.WorkflowStatusEnumeration progress) {
         switch (progress) {
             case OPEN:
                 return WorkflowStatusEnumeration.WORKFLOW_STATUS_ENUMERATION_OPEN;
@@ -527,26 +527,26 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.WorkflowStatusEnumeration map(WorkflowStatusEnumeration progress) {
+    protected static uk.org.siri.siri21.WorkflowStatusEnumeration map(WorkflowStatusEnumeration progress) {
         switch (progress) {
             case WORKFLOW_STATUS_ENUMERATION_OPEN:
-                return uk.org.siri.siri20.WorkflowStatusEnumeration.OPEN;
+                return uk.org.siri.siri21.WorkflowStatusEnumeration.OPEN;
             case WORKFLOW_STATUS_ENUMERATION_DRAFT:
-                return uk.org.siri.siri20.WorkflowStatusEnumeration.DRAFT;
+                return uk.org.siri.siri21.WorkflowStatusEnumeration.DRAFT;
             case WORKFLOW_STATUS_ENUMERATION_CLOSED:
-                return uk.org.siri.siri20.WorkflowStatusEnumeration.CLOSED;
+                return uk.org.siri.siri21.WorkflowStatusEnumeration.CLOSED;
             case WORKFLOW_STATUS_ENUMERATION_CLOSING:
-                return uk.org.siri.siri20.WorkflowStatusEnumeration.CLOSING;
+                return uk.org.siri.siri21.WorkflowStatusEnumeration.CLOSING;
             case WORKFLOW_STATUS_ENUMERATION_PUBLISHED:
-                return uk.org.siri.siri20.WorkflowStatusEnumeration.PUBLISHED;
+                return uk.org.siri.siri21.WorkflowStatusEnumeration.PUBLISHED;
             case WORKFLOW_STATUS_ENUMERATION_APPROVED_DRAFT:
-                return uk.org.siri.siri20.WorkflowStatusEnumeration.APPROVED_DRAFT;
+                return uk.org.siri.siri21.WorkflowStatusEnumeration.APPROVED_DRAFT;
             default:
                 return null;
         }
     }
 
-    protected static SituationSourceTypeEnumeration map(uk.org.siri.siri20.SituationSourceTypeEnumeration sourceType) {
+    protected static SituationSourceTypeEnumeration map(uk.org.siri.siri21.SituationSourceTypeEnumeration sourceType) {
         switch (sourceType) {
             case DIRECT_REPORT:
                 return SituationSourceTypeEnumeration.SITUATION_SOURCE_TYPE_ENUMERATION_DIRECT_REPORT;
@@ -577,39 +577,39 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.SituationSourceTypeEnumeration map(SituationSourceTypeEnumeration sourceType) {
+    protected static uk.org.siri.siri21.SituationSourceTypeEnumeration map(SituationSourceTypeEnumeration sourceType) {
         switch (sourceType) {
             case SITUATION_SOURCE_TYPE_ENUMERATION_DIRECT_REPORT:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.DIRECT_REPORT;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.DIRECT_REPORT;
             case SITUATION_SOURCE_TYPE_ENUMERATION_TV:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.TV;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.TV;
             case SITUATION_SOURCE_TYPE_ENUMERATION_FAX:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.FAX;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.FAX;
             case SITUATION_SOURCE_TYPE_ENUMERATION_WEB:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.WEB;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.WEB;
             case SITUATION_SOURCE_TYPE_ENUMERATION_FEED:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.FEED;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.FEED;
             case SITUATION_SOURCE_TYPE_ENUMERATION_POST:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.POST;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.POST;
             case SITUATION_SOURCE_TYPE_ENUMERATION_TEXT:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.TEXT;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.TEXT;
             case SITUATION_SOURCE_TYPE_ENUMERATION_EMAIL:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.EMAIL;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.EMAIL;
             case SITUATION_SOURCE_TYPE_ENUMERATION_PAGER:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.PAGER;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.PAGER;
             case SITUATION_SOURCE_TYPE_ENUMERATION_PHONE:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.PHONE;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.PHONE;
             case SITUATION_SOURCE_TYPE_ENUMERATION_RADIO:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.RADIO;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.RADIO;
             case SITUATION_SOURCE_TYPE_ENUMERATION_OTHER:
-                return uk.org.siri.siri20.SituationSourceTypeEnumeration.OTHER;
+                return uk.org.siri.siri21.SituationSourceTypeEnumeration.OTHER;
             default:
                 return null;
         }
     }
 
 
-    protected static VehicleStatusEnumeration map(uk.org.siri.siri20.VehicleStatusEnumeration vehicleStatus) {
+    protected static VehicleStatusEnumeration map(uk.org.siri.siri21.VehicleStatusEnumeration vehicleStatus) {
         switch (vehicleStatus) {
             case ASSIGNED:
                 return VehicleStatusEnumeration.VEHICLE_STATUS_ENUMERATION_ASSIGNED;
@@ -627,20 +627,20 @@ public class EnumerationMapper {
                 return VehicleStatusEnumeration.VEHICLE_STATUS_ENUMERATION_UNSPECIFIED;
         }
     }
-    protected static uk.org.siri.siri20.VehicleStatusEnumeration map(VehicleStatusEnumeration vehicleStatus) {
+    protected static uk.org.siri.siri21.VehicleStatusEnumeration map(VehicleStatusEnumeration vehicleStatus) {
         switch (vehicleStatus) {
             case VEHICLE_STATUS_ENUMERATION_ASSIGNED:
-                return uk.org.siri.siri20.VehicleStatusEnumeration.ASSIGNED;
+                return uk.org.siri.siri21.VehicleStatusEnumeration.ASSIGNED;
             case VEHICLE_STATUS_ENUMERATION_AT_ORIGIN:
-                return uk.org.siri.siri20.VehicleStatusEnumeration.AT_ORIGIN;
+                return uk.org.siri.siri21.VehicleStatusEnumeration.AT_ORIGIN;
             case VEHICLE_STATUS_ENUMERATION_CANCELLED:
-                return uk.org.siri.siri20.VehicleStatusEnumeration.CANCELLED;
+                return uk.org.siri.siri21.VehicleStatusEnumeration.CANCELLED;
             case VEHICLE_STATUS_ENUMERATION_COMPLETED:
-                return uk.org.siri.siri20.VehicleStatusEnumeration.COMPLETED;
+                return uk.org.siri.siri21.VehicleStatusEnumeration.COMPLETED;
             case VEHICLE_STATUS_ENUMERATION_IN_PROGRESS:
-                return uk.org.siri.siri20.VehicleStatusEnumeration.IN_PROGRESS;
+                return uk.org.siri.siri21.VehicleStatusEnumeration.IN_PROGRESS;
             case VEHICLE_STATUS_ENUMERATION_OFF_ROUTE:
-                return uk.org.siri.siri20.VehicleStatusEnumeration.OFF_ROUTE;
+                return uk.org.siri.siri21.VehicleStatusEnumeration.OFF_ROUTE;
             default:
                 return null;
         }
@@ -669,7 +669,7 @@ public class EnumerationMapper {
         }
     }
 
-    protected static CallStatusEnumeration map(uk.org.siri.siri20.CallStatusEnumeration status) {
+    protected static CallStatusEnumeration map(uk.org.siri.siri21.CallStatusEnumeration status) {
         switch (status) {
             case EARLY:
                 return CallStatusEnumeration.CALL_STATUS_ENUMERATION_EARLY;
@@ -694,7 +694,7 @@ public class EnumerationMapper {
         }
     }
 
-    protected static DepartureBoardingActivityEnumeration map(uk.org.siri.siri20.DepartureBoardingActivityEnumeration departureBoardingActivity) {
+    protected static DepartureBoardingActivityEnumeration map(uk.org.siri.siri21.DepartureBoardingActivityEnumeration departureBoardingActivity) {
         switch (departureBoardingActivity) {
             case PASS_THRU:
                 return DepartureBoardingActivityEnumeration.DEPARTURE_BOARDING_ACTIVITY_ENUMERATION_PASS_THRU;
@@ -707,7 +707,7 @@ public class EnumerationMapper {
         }
     }
 
-    protected static ArrivalBoardingActivityEnumeration map(uk.org.siri.siri20.ArrivalBoardingActivityEnumeration arrivalBoardingActivity) {
+    protected static ArrivalBoardingActivityEnumeration map(uk.org.siri.siri21.ArrivalBoardingActivityEnumeration arrivalBoardingActivity) {
         switch (arrivalBoardingActivity) {
             case PASS_THRU:
                 return ArrivalBoardingActivityEnumeration.ARRIVAL_BOARDING_ACTIVITY_ENUMERATION_PASS_THRU;
@@ -720,7 +720,7 @@ public class EnumerationMapper {
         }
     }
 
-    protected static OccupancyEnumeration map(uk.org.siri.siri20.OccupancyEnumeration occupancy) {
+    protected static OccupancyEnumeration map(uk.org.siri.siri21.OccupancyEnumeration occupancy) {
         switch (occupancy) {
             case SEATS_AVAILABLE:
                 return OccupancyEnumeration.OCCUPANCY_ENUMERATION_SEATS_AVAILABLE;
@@ -756,71 +756,71 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.CallStatusEnumeration map(CallStatusEnumeration status) {
+    protected static uk.org.siri.siri21.CallStatusEnumeration map(CallStatusEnumeration status) {
         switch (status) {
             case CALL_STATUS_ENUMERATION_EARLY:
-                return uk.org.siri.siri20.CallStatusEnumeration.EARLY;
+                return uk.org.siri.siri21.CallStatusEnumeration.EARLY;
             case CALL_STATUS_ENUMERATION_MISSED:
-                return uk.org.siri.siri20.CallStatusEnumeration.MISSED;
+                return uk.org.siri.siri21.CallStatusEnumeration.MISSED;
             case CALL_STATUS_ENUMERATION_ARRIVED:
-                return uk.org.siri.siri20.CallStatusEnumeration.ARRIVED;
+                return uk.org.siri.siri21.CallStatusEnumeration.ARRIVED;
             case CALL_STATUS_ENUMERATION_DELAYED:
-                return uk.org.siri.siri20.CallStatusEnumeration.DELAYED;
+                return uk.org.siri.siri21.CallStatusEnumeration.DELAYED;
             case CALL_STATUS_ENUMERATION_CANCELLED:
-                return uk.org.siri.siri20.CallStatusEnumeration.CANCELLED;
+                return uk.org.siri.siri21.CallStatusEnumeration.CANCELLED;
             case CALL_STATUS_ENUMERATION_ON_TIME:
-                return uk.org.siri.siri20.CallStatusEnumeration.ON_TIME;
+                return uk.org.siri.siri21.CallStatusEnumeration.ON_TIME;
             case CALL_STATUS_ENUMERATION_DEPARTED:
-                return uk.org.siri.siri20.CallStatusEnumeration.DEPARTED;
+                return uk.org.siri.siri21.CallStatusEnumeration.DEPARTED;
             case CALL_STATUS_ENUMERATION_NO_REPORT:
-                return uk.org.siri.siri20.CallStatusEnumeration.NO_REPORT;
+                return uk.org.siri.siri21.CallStatusEnumeration.NO_REPORT;
             case CALL_STATUS_ENUMERATION_NOT_EXPECTED:
-                return uk.org.siri.siri20.CallStatusEnumeration.NOT_EXPECTED;
+                return uk.org.siri.siri21.CallStatusEnumeration.NOT_EXPECTED;
             default:
                 return null;
         }
     }
 
-    protected static uk.org.siri.siri20.DepartureBoardingActivityEnumeration map(DepartureBoardingActivityEnumeration boardingActivity) {
+    protected static uk.org.siri.siri21.DepartureBoardingActivityEnumeration map(DepartureBoardingActivityEnumeration boardingActivity) {
         switch (boardingActivity) {
             case DEPARTURE_BOARDING_ACTIVITY_ENUMERATION_BOARDING:
-                return uk.org.siri.siri20.DepartureBoardingActivityEnumeration.BOARDING;
+                return uk.org.siri.siri21.DepartureBoardingActivityEnumeration.BOARDING;
             case DEPARTURE_BOARDING_ACTIVITY_ENUMERATION_NO_BOARDING:
-                return uk.org.siri.siri20.DepartureBoardingActivityEnumeration.NO_BOARDING;
+                return uk.org.siri.siri21.DepartureBoardingActivityEnumeration.NO_BOARDING;
             case DEPARTURE_BOARDING_ACTIVITY_ENUMERATION_PASS_THRU:
-                return uk.org.siri.siri20.DepartureBoardingActivityEnumeration.PASS_THRU;
+                return uk.org.siri.siri21.DepartureBoardingActivityEnumeration.PASS_THRU;
             default:
                 return null;
         }
     }
 
-    protected static uk.org.siri.siri20.ArrivalBoardingActivityEnumeration map(ArrivalBoardingActivityEnumeration boardingActivity) {
+    protected static uk.org.siri.siri21.ArrivalBoardingActivityEnumeration map(ArrivalBoardingActivityEnumeration boardingActivity) {
         switch (boardingActivity) {
             case ARRIVAL_BOARDING_ACTIVITY_ENUMERATION_ALIGHTING:
-                return uk.org.siri.siri20.ArrivalBoardingActivityEnumeration.ALIGHTING;
+                return uk.org.siri.siri21.ArrivalBoardingActivityEnumeration.ALIGHTING;
             case ARRIVAL_BOARDING_ACTIVITY_ENUMERATION_NO_ALIGHTING:
-                return uk.org.siri.siri20.ArrivalBoardingActivityEnumeration.NO_ALIGHTING;
+                return uk.org.siri.siri21.ArrivalBoardingActivityEnumeration.NO_ALIGHTING;
             case ARRIVAL_BOARDING_ACTIVITY_ENUMERATION_PASS_THRU:
-                return uk.org.siri.siri20.ArrivalBoardingActivityEnumeration.PASS_THRU;
+                return uk.org.siri.siri21.ArrivalBoardingActivityEnumeration.PASS_THRU;
             default:
                 return null;
         }
     }
 
-    protected static uk.org.siri.siri20.OccupancyEnumeration map(OccupancyEnumeration occupancy) {
+    protected static uk.org.siri.siri21.OccupancyEnumeration map(OccupancyEnumeration occupancy) {
         switch (occupancy) {
             case OCCUPANCY_ENUMERATION_FULL:
-                return uk.org.siri.siri20.OccupancyEnumeration.FULL;
+                return uk.org.siri.siri21.OccupancyEnumeration.FULL;
             case OCCUPANCY_ENUMERATION_SEATS_AVAILABLE:
-                return uk.org.siri.siri20.OccupancyEnumeration.SEATS_AVAILABLE;
+                return uk.org.siri.siri21.OccupancyEnumeration.SEATS_AVAILABLE;
             case OCCUPANCY_ENUMERATION_STANDING_AVAILABLE:
-                return uk.org.siri.siri20.OccupancyEnumeration.STANDING_AVAILABLE;
+                return uk.org.siri.siri21.OccupancyEnumeration.STANDING_AVAILABLE;
             default:
                 return null;
         }
     }
 
-    protected static ServiceConditionEnumeration map(uk.org.siri.siri20.ServiceConditionEnumeration condition) {
+    protected static ServiceConditionEnumeration map(uk.org.siri.siri21.ServiceConditionEnumeration condition) {
         switch (condition) {
             case ADDITIONAL_SERVICE:
                 return ServiceConditionEnumeration.SERVICE_CONDITION_ENUMERATION_ADDITIONAL_SERVICE;
@@ -911,98 +911,98 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.ServiceConditionEnumeration map(ServiceConditionEnumeration condition) {
+    protected static uk.org.siri.siri21.ServiceConditionEnumeration map(ServiceConditionEnumeration condition) {
         switch (condition) {
             case SERVICE_CONDITION_ENUMERATION_ADDITIONAL_SERVICE:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.ADDITIONAL_SERVICE;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.ADDITIONAL_SERVICE;
             case SERVICE_CONDITION_ENUMERATION_ALTERED:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.ALTERED;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.ALTERED;
             case SERVICE_CONDITION_ENUMERATION_ARRIVES_EARLY:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.ARRIVES_EARLY;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.ARRIVES_EARLY;
             case SERVICE_CONDITION_ENUMERATION_CANCELLED:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.CANCELLED;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.CANCELLED;
             case SERVICE_CONDITION_ENUMERATION_DELAYED:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.DELAYED;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.DELAYED;
             case SERVICE_CONDITION_ENUMERATION_DISRUPTED:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.DISRUPTED;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.DISRUPTED;
             case SERVICE_CONDITION_ENUMERATION_DIVERTED:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.DIVERTED;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.DIVERTED;
             case SERVICE_CONDITION_ENUMERATION_EXTENDED_SERVICE:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.EXTENDED_SERVICE;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.EXTENDED_SERVICE;
             case SERVICE_CONDITION_ENUMERATION_FULL_LENGTH_SERVICE:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.FULL_LENGTH_SERVICE;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.FULL_LENGTH_SERVICE;
             case SERVICE_CONDITION_ENUMERATION_INTERMITTENT_SERVICE:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.INTERMITTENT_SERVICE;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.INTERMITTENT_SERVICE;
             case SERVICE_CONDITION_ENUMERATION_NO_SERVICE:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.NO_SERVICE;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.NO_SERVICE;
             case SERVICE_CONDITION_ENUMERATION_NORMAL_SERVICE:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.NORMAL_SERVICE;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.NORMAL_SERVICE;
             case SERVICE_CONDITION_ENUMERATION_ON_TIME:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.ON_TIME;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.ON_TIME;
             case SERVICE_CONDITION_ENUMERATION_REPLACEMENT_SERVICE:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.REPLACEMENT_SERVICE;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.REPLACEMENT_SERVICE;
             case SERVICE_CONDITION_ENUMERATION_REPLACEMENT_TRANSPORT:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.REPLACEMENT_TRANSPORT;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.REPLACEMENT_TRANSPORT;
             case SERVICE_CONDITION_ENUMERATION_SHORT_FORMED_SERVICE:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.SHORT_FORMED_SERVICE;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.SHORT_FORMED_SERVICE;
             case SERVICE_CONDITION_ENUMERATION_SHUTTLE_SERVICE:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.SHUTTLE_SERVICE;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.SHUTTLE_SERVICE;
             case SERVICE_CONDITION_ENUMERATION_SPECIAL_SERVICE:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.SPECIAL_SERVICE;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.SPECIAL_SERVICE;
             case SERVICE_CONDITION_ENUMERATION_SPLITTING_TRAIN:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.SPLITTING_TRAIN;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.SPLITTING_TRAIN;
             case SERVICE_CONDITION_ENUMERATION_UNDEFINED_SERVICE_INFORMATION:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.UNDEFINED_SERVICE_INFORMATION;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.UNDEFINED_SERVICE_INFORMATION;
             case SERVICE_CONDITION_ENUMERATION_PTI13_0:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_0;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_0;
             case SERVICE_CONDITION_ENUMERATION_PTI13_1:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_1;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_1;
             case SERVICE_CONDITION_ENUMERATION_PTI13_2:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_2;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_2;
             case SERVICE_CONDITION_ENUMERATION_PTI13_3:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_3;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_3;
             case SERVICE_CONDITION_ENUMERATION_PTI13_4:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_4;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_4;
             case SERVICE_CONDITION_ENUMERATION_PTI13_5:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_5;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_5;
             case SERVICE_CONDITION_ENUMERATION_PTI13_6:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_6;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_6;
             case SERVICE_CONDITION_ENUMERATION_PTI13_7:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_7;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_7;
             case SERVICE_CONDITION_ENUMERATION_PTI13_8:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_8;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_8;
             case SERVICE_CONDITION_ENUMERATION_PTI13_9:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_9;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_9;
             case SERVICE_CONDITION_ENUMERATION_PTI13_10:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_10;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_10;
             case SERVICE_CONDITION_ENUMERATION_PTI13_11:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_11;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_11;
             case SERVICE_CONDITION_ENUMERATION_PTI13_12:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_12;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_12;
             case SERVICE_CONDITION_ENUMERATION_PTI13_13:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_13;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_13;
             case SERVICE_CONDITION_ENUMERATION_PTI13_14:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_14;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_14;
             case SERVICE_CONDITION_ENUMERATION_PTI13_15:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_15;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_15;
             case SERVICE_CONDITION_ENUMERATION_PTI13_16:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_16;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_16;
             case SERVICE_CONDITION_ENUMERATION_PTI13_17:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_17;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_17;
             case SERVICE_CONDITION_ENUMERATION_PTI13_18:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_18;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_18;
             case SERVICE_CONDITION_ENUMERATION_PTI13_19:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_19;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_19;
             case SERVICE_CONDITION_ENUMERATION_PTI13_255:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.PTI_13_255;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.PTI_13_255;
             case SERVICE_CONDITION_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.ServiceConditionEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.ServiceConditionEnumeration.UNKNOWN;
             default:
                 return null;
         }
     }
 
-    protected static DelayBandEnumeration map(uk.org.siri.siri20.DelayBandEnumeration delayBand) {
+    protected static DelayBandEnumeration map(uk.org.siri.siri21.DelayBandEnumeration delayBand) {
         switch (delayBand) {
             case BETWEEN_ONE_HOUR_AND_THREE_HOURS:
                 return DelayBandEnumeration.DELAY_BAND_ENUMERATION_BETWEEN_ONE_HOUR_AND_THREE_HOURS;
@@ -1033,32 +1033,32 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.DelayBandEnumeration map(DelayBandEnumeration delayBand) {
+    protected static uk.org.siri.siri21.DelayBandEnumeration map(DelayBandEnumeration delayBand) {
         switch (delayBand) {
             case DELAY_BAND_ENUMERATION_BETWEEN_ONE_HOUR_AND_THREE_HOURS:
-                return uk.org.siri.siri20.DelayBandEnumeration.BETWEEN_ONE_HOUR_AND_THREE_HOURS;
+                return uk.org.siri.siri21.DelayBandEnumeration.BETWEEN_ONE_HOUR_AND_THREE_HOURS;
             case DELAY_BAND_ENUMERATION_BETWEEN_TEN_MINUTES_AND_THIRTY_MINUTES:
-                return uk.org.siri.siri20.DelayBandEnumeration.BETWEEN_TEN_MINUTES_AND_THIRTY_MINUTES;
+                return uk.org.siri.siri21.DelayBandEnumeration.BETWEEN_TEN_MINUTES_AND_THIRTY_MINUTES;
             case DELAY_BAND_ENUMERATION_BETWEEN_THIRTY_MINUTES_AND_ONE_HOUR:
-                return uk.org.siri.siri20.DelayBandEnumeration.BETWEEN_THIRTY_MINUTES_AND_ONE_HOUR;
+                return uk.org.siri.siri21.DelayBandEnumeration.BETWEEN_THIRTY_MINUTES_AND_ONE_HOUR;
             case DELAY_BAND_ENUMERATION_BETWEEN_THREE_HOURS_AND_SIX_HOURS:
-                return uk.org.siri.siri20.DelayBandEnumeration.BETWEEN_THREE_HOURS_AND_SIX_HOURS;
+                return uk.org.siri.siri21.DelayBandEnumeration.BETWEEN_THREE_HOURS_AND_SIX_HOURS;
             case DELAY_BAND_ENUMERATION_DELAY_TWO_MINUTES:
-                return uk.org.siri.siri20.DelayBandEnumeration.DELAY_TWO_MINUTES;
+                return uk.org.siri.siri21.DelayBandEnumeration.DELAY_TWO_MINUTES;
             case DELAY_BAND_ENUMERATION_LONGER_THAN_SIX_HOURS:
-                return uk.org.siri.siri20.DelayBandEnumeration.LONGER_THAN_SIX_HOURS;
+                return uk.org.siri.siri21.DelayBandEnumeration.LONGER_THAN_SIX_HOURS;
             case DELAY_BAND_ENUMERATION_NEGLIGIBLE:
-                return uk.org.siri.siri20.DelayBandEnumeration.NEGLIGIBLE;
+                return uk.org.siri.siri21.DelayBandEnumeration.NEGLIGIBLE;
             case DELAY_BAND_ENUMERATION_UP_TO_EIGHT_MINUTES:
-                return uk.org.siri.siri20.DelayBandEnumeration.UP_TO_EIGHT_MINUTES;
+                return uk.org.siri.siri21.DelayBandEnumeration.UP_TO_EIGHT_MINUTES;
             case DELAY_BAND_ENUMERATION_UP_TO_FIVE_MINUTES:
-                return uk.org.siri.siri20.DelayBandEnumeration.UP_TO_FIVE_MINUTES;
+                return uk.org.siri.siri21.DelayBandEnumeration.UP_TO_FIVE_MINUTES;
             case DELAY_BAND_ENUMERATION_UP_TO_FOUR_MINUTES:
-                return uk.org.siri.siri20.DelayBandEnumeration.UP_TO_FOUR_MINUTES;
+                return uk.org.siri.siri21.DelayBandEnumeration.UP_TO_FOUR_MINUTES;
             case DELAY_BAND_ENUMERATION_UP_TO_TEN_MINUTES:
-                return uk.org.siri.siri20.DelayBandEnumeration.UP_TO_TEN_MINUTES;
+                return uk.org.siri.siri21.DelayBandEnumeration.UP_TO_TEN_MINUTES;
             case DELAY_BAND_ENUMERATION_UP_TO_THREE_MINUTES:
-                return uk.org.siri.siri20.DelayBandEnumeration.UP_TO_THREE_MINUTES;
+                return uk.org.siri.siri21.DelayBandEnumeration.UP_TO_THREE_MINUTES;
             default:
                 return null;
         }
@@ -1094,7 +1094,7 @@ public class EnumerationMapper {
         }
     }
 
-    protected static TicketRestrictionEnumeration map(uk.org.siri.siri20.TicketRestrictionEnumeration delayBand) {
+    protected static TicketRestrictionEnumeration map(uk.org.siri.siri21.TicketRestrictionEnumeration delayBand) {
         switch (delayBand) {
             case ALL_TICKET_CLASSES_VALID:
                 return TicketRestrictionEnumeration.TICKET_RESTRICTION_ENUMERATION_ALL_TICKET_CLASSES_VALID;
@@ -1150,62 +1150,62 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.TicketRestrictionEnumeration map(TicketRestrictionEnumeration delayBand) {
+    protected static uk.org.siri.siri21.TicketRestrictionEnumeration map(TicketRestrictionEnumeration delayBand) {
         switch (delayBand) {
             case TICKET_RESTRICTION_ENUMERATION_ALL_TICKET_CLASSES_VALID:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.ALL_TICKET_CLASSES_VALID;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.ALL_TICKET_CLASSES_VALID;
             case TICKET_RESTRICTION_ENUMERATION_CERTAIN_TICKETS_ONLY:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.CERTAIN_TICKETS_ONLY;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.CERTAIN_TICKETS_ONLY;
             case TICKET_RESTRICTION_ENUMERATION_FULL_FARE_ONLY:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.FULL_FARE_ONLY;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.FULL_FARE_ONLY;
             case TICKET_RESTRICTION_ENUMERATION_NO_OFF_PEAK_TICKETS:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.NO_OFF_PEAK_TICKETS;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.NO_OFF_PEAK_TICKETS;
             case TICKET_RESTRICTION_ENUMERATION_NO_REDUCED_FARE_TICKETS:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.NO_REDUCED_FARE_TICKETS;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.NO_REDUCED_FARE_TICKETS;
             case TICKET_RESTRICTION_ENUMERATION_NO_RESTRICTIONS:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.NO_RESTRICTIONS;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.NO_RESTRICTIONS;
             case TICKET_RESTRICTION_ENUMERATION_NO_WEEKEND_RETURN_TICKETS:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.NO_WEEKEND_RETURN_TICKETS;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.NO_WEEKEND_RETURN_TICKETS;
             case TICKET_RESTRICTION_ENUMERATION_ONLY_TICKETS_OF_SPECIFIED_OPERATOR:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.ONLY_TICKETS_OF_SPECIFIED_OPERATOR;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.ONLY_TICKETS_OF_SPECIFIED_OPERATOR;
             case TICKET_RESTRICTION_ENUMERATION_SPECIAL_FARE:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.SPECIAL_FARE;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.SPECIAL_FARE;
             case TICKET_RESTRICTION_ENUMERATION_TICKET_WITH_RESERVATION:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.TICKET_WITH_RESERVATION;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.TICKET_WITH_RESERVATION;
             case TICKET_RESTRICTION_ENUMERATION_UNKNOWN_TICKET_RESTRICTION:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.UNKNOWN_TICKET_RESTRICTION;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.UNKNOWN_TICKET_RESTRICTION;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_0:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_0;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_0;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_1:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_1;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_1;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_2:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_2;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_2;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_3:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_3;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_3;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_4:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_4;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_4;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_5:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_5;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_5;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_6:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_6;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_6;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_7:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_7;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_7;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_8:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_8;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_8;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_9:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_9;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_9;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_10:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_10;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_10;
             case TICKET_RESTRICTION_ENUMERATION_PTI25_255:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.PTI_25_255;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.PTI_25_255;
             case TICKET_RESTRICTION_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.TicketRestrictionEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.TicketRestrictionEnumeration.UNKNOWN;
             default:
                 return null;
         }
     }
 
-    protected static RelatedToEnumeration map(uk.org.siri.siri20.RelatedToEnumeration relatedTo) {
+    protected static RelatedToEnumeration map(uk.org.siri.siri21.RelatedToEnumeration relatedTo) {
         switch (relatedTo) {
             case ASSOCIATED:
                 return RelatedToEnumeration.RELATED_TO_ENUMERATION_ASSOCIATED;
@@ -1224,26 +1224,26 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.RelatedToEnumeration map(RelatedToEnumeration relatedTo) {
+    protected static uk.org.siri.siri21.RelatedToEnumeration map(RelatedToEnumeration relatedTo) {
         switch (relatedTo) {
             case RELATED_TO_ENUMERATION_ASSOCIATED:
-                return uk.org.siri.siri20.RelatedToEnumeration.ASSOCIATED;
+                return uk.org.siri.siri21.RelatedToEnumeration.ASSOCIATED;
             case RELATED_TO_ENUMERATION_CAUSE:
-                return uk.org.siri.siri20.RelatedToEnumeration.CAUSE;
+                return uk.org.siri.siri21.RelatedToEnumeration.CAUSE;
             case RELATED_TO_ENUMERATION_EFFECT:
-                return uk.org.siri.siri20.RelatedToEnumeration.EFFECT;
+                return uk.org.siri.siri21.RelatedToEnumeration.EFFECT;
             case RELATED_TO_ENUMERATION_SUPERCEDED_BY:
-                return uk.org.siri.siri20.RelatedToEnumeration.SUPERCEDED_BY;
+                return uk.org.siri.siri21.RelatedToEnumeration.SUPERCEDED_BY;
             case RELATED_TO_ENUMERATION_SUPERCEDES:
-                return uk.org.siri.siri20.RelatedToEnumeration.SUPERCEDES;
+                return uk.org.siri.siri21.RelatedToEnumeration.SUPERCEDES;
             case RELATED_TO_ENUMERATION_UPDATE:
-                return uk.org.siri.siri20.RelatedToEnumeration.UPDATE;
+                return uk.org.siri.siri21.RelatedToEnumeration.UPDATE;
             default:
                 return null;
         }
     }
 
-    protected static ScopeTypeEnumeration map(uk.org.siri.siri20.ScopeTypeEnumeration scope) {
+    protected static ScopeTypeEnumeration map(uk.org.siri.siri21.ScopeTypeEnumeration scope) {
         switch (scope) {
             case ALL_PT:
                 return ScopeTypeEnumeration.SCOPE_TYPE_ENUMERATION_ALL_P_T;
@@ -1280,44 +1280,44 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.ScopeTypeEnumeration map(ScopeTypeEnumeration scope) {
+    protected static uk.org.siri.siri21.ScopeTypeEnumeration map(ScopeTypeEnumeration scope) {
         switch (scope) {
             case SCOPE_TYPE_ENUMERATION_ALL_P_T:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.ALL_PT;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.ALL_PT;
             case SCOPE_TYPE_ENUMERATION_CONNECTION_LINK:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.CONNECTION_LINK;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.CONNECTION_LINK;
             case SCOPE_TYPE_ENUMERATION_DATED_VEHICLE_JOURNEY:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.DATED_VEHICLE_JOURNEY;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.DATED_VEHICLE_JOURNEY;
             case SCOPE_TYPE_ENUMERATION_GENERAL:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.GENERAL;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.GENERAL;
             case SCOPE_TYPE_ENUMERATION_INTERCHANGE:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.INTERCHANGE;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.INTERCHANGE;
             case SCOPE_TYPE_ENUMERATION_LINE:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.LINE;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.LINE;
             case SCOPE_TYPE_ENUMERATION_NETWORK:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.NETWORK;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.NETWORK;
             case SCOPE_TYPE_ENUMERATION_OPERATOR:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.OPERATOR;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.OPERATOR;
             case SCOPE_TYPE_ENUMERATION_PLACE:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.PLACE;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.PLACE;
             case SCOPE_TYPE_ENUMERATION_ROAD:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.ROAD;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.ROAD;
             case SCOPE_TYPE_ENUMERATION_ROUTE:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.ROUTE;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.ROUTE;
             case SCOPE_TYPE_ENUMERATION_STOP_PLACE:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.STOP_PLACE;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.STOP_PLACE;
             case SCOPE_TYPE_ENUMERATION_STOP_PLACE_COMPONENT:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.STOP_PLACE_COMPONENT;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.STOP_PLACE_COMPONENT;
             case SCOPE_TYPE_ENUMERATION_STOP_POINT:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.STOP_POINT;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.STOP_POINT;
             case SCOPE_TYPE_ENUMERATION_VEHICLE_JOURNEY:
-                return uk.org.siri.siri20.ScopeTypeEnumeration.VEHICLE_JOURNEY;
+                return uk.org.siri.siri21.ScopeTypeEnumeration.VEHICLE_JOURNEY;
             default:
                 return null;
         }
     }
 
-    protected static StopPointTypeEnumeration map(uk.org.siri.siri20.StopPointTypeEnumeration stopPointType) {
+    protected static StopPointTypeEnumeration map(uk.org.siri.siri21.StopPointTypeEnumeration stopPointType) {
         switch (stopPointType) {
             case BUS_STOP:
                 return StopPointTypeEnumeration.STOP_POINT_TYPE_ENUMERATION_BUS_STOP;
@@ -1356,40 +1356,40 @@ public class EnumerationMapper {
         }
     }
 
-    protected static uk.org.siri.siri20.StopPointTypeEnumeration map(StopPointTypeEnumeration relatedTo) {
+    protected static uk.org.siri.siri21.StopPointTypeEnumeration map(StopPointTypeEnumeration relatedTo) {
         switch (relatedTo) {
             case STOP_POINT_TYPE_ENUMERATION_BUS_STOP:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.BUS_STOP;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.BUS_STOP;
             case STOP_POINT_TYPE_ENUMERATION_FERRY_BERTH:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.FERRY_BERTH;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.FERRY_BERTH;
             case STOP_POINT_TYPE_ENUMERATION_HARBOUR_PIER:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.HARBOUR_PIER;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.HARBOUR_PIER;
             case STOP_POINT_TYPE_ENUMERATION_LANDING_STAGE:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.LANDING_STAGE;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.LANDING_STAGE;
             case STOP_POINT_TYPE_ENUMERATION_PLATFORM_NUMBER:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.PLATFORM_NUMBER;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.PLATFORM_NUMBER;
             case STOP_POINT_TYPE_ENUMERATION_TERMINAL_GATE:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.TERMINAL_GATE;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.TERMINAL_GATE;
             case STOP_POINT_TYPE_ENUMERATION_UNDEFINED_BOOKING_INFORMATION:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.UNDEFINED_BOOKING_INFORMATION;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.UNDEFINED_BOOKING_INFORMATION;
             case STOP_POINT_TYPE_ENUMERATION_PTI17_0:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.PTI_17_0;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.PTI_17_0;
             case STOP_POINT_TYPE_ENUMERATION_PTI17_1:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.PTI_17_1;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.PTI_17_1;
             case STOP_POINT_TYPE_ENUMERATION_PTI17_2:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.PTI_17_2;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.PTI_17_2;
             case STOP_POINT_TYPE_ENUMERATION_PTI17_3:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.PTI_17_3;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.PTI_17_3;
             case STOP_POINT_TYPE_ENUMERATION_PTI17_4:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.PTI_17_4;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.PTI_17_4;
             case STOP_POINT_TYPE_ENUMERATION_PTI17_5:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.PTI_17_5;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.PTI_17_5;
             case STOP_POINT_TYPE_ENUMERATION_PTI17_6:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.PTI_17_6;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.PTI_17_6;
             case STOP_POINT_TYPE_ENUMERATION_PTI17_255:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.PTI_17_255;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.PTI_17_255;
             case STOP_POINT_TYPE_ENUMERATION_UNKNOWN:
-                return uk.org.siri.siri20.StopPointTypeEnumeration.UNKNOWN;
+                return uk.org.siri.siri21.StopPointTypeEnumeration.UNKNOWN;
             default:
                 return null;
         }

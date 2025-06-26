@@ -1,6 +1,6 @@
 package org.entur.protobuf.mapper.siri;
 
-import uk.org.siri.siri20.*;
+import uk.org.siri.siri21.*;
 import uk.org.siri.www.siri.JourneyPatternRefStructure;
 import uk.org.siri.www.siri.MonitoredStopVisitStructure;
 
@@ -30,7 +30,7 @@ public class StopMonitoringSiri2PbfMapper extends CommonMapper {
 
 
 
-    private static MonitoredStopVisitStructure map(uk.org.siri.siri20.MonitoredStopVisit monitoredVisit) {
+    private static MonitoredStopVisitStructure map(uk.org.siri.siri21.MonitoredStopVisit monitoredVisit) {
 
         uk.org.siri.www.siri.MonitoredStopVisitStructure.Builder builder = MonitoredStopVisitStructure.newBuilder();
         if (monitoredVisit.getRecordedAtTime() != null) {
@@ -144,9 +144,10 @@ public class StopMonitoringSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static uk.org.siri.www.siri.MonitoredCallStructure.Builder map(uk.org.siri.siri20.MonitoredCallStructure monitoredCall) {
+    private static uk.org.siri.www.siri.MonitoredCallStructure.Builder map(uk.org.siri.siri21.MonitoredCallStructure monitoredCall) {
         uk.org.siri.www.siri.MonitoredCallStructure.Builder builder =  uk.org.siri.www.siri.MonitoredCallStructure.newBuilder();
         builder.setStopPointRef(map(monitoredCall.getStopPointRef()));
+
 
         if (monitoredCall.getOrder() != null){
             builder.setOrder(monitoredCall.getOrder().intValue());
@@ -171,7 +172,9 @@ public class StopMonitoringSiri2PbfMapper extends CommonMapper {
             builder.setArrivalStatus(map(monitoredCall.getArrivalStatus()));
         }
 
-        if (monitoredCall.getArrivalStopAssignment() != null){
+        if (monitoredCall.getArrivalStopAssignments() != null && monitoredCall.getArrivalStopAssignments().size() > 0){
+            StopAssignmentStructure
+
             builder.setArrivalStopAssignment(map(monitoredCall.getArrivalStopAssignment()));
         }
 
@@ -194,7 +197,7 @@ public class StopMonitoringSiri2PbfMapper extends CommonMapper {
     }
 
 
-    private static uk.org.siri.www.siri.StopAssignmentStructure map(uk.org.siri.siri20.StopAssignmentStructure stopAssignmentStructure) {
+    private static uk.org.siri.www.siri.StopAssignmentStructure map(uk.org.siri.siri21.StopAssignmentStructure stopAssignmentStructure) {
         uk.org.siri.www.siri.StopAssignmentStructure.Builder struct = uk.org.siri.www.siri.StopAssignmentStructure.newBuilder();
 
         if (stopAssignmentStructure.getActualQuayRef() != null){
@@ -218,25 +221,25 @@ public class StopMonitoringSiri2PbfMapper extends CommonMapper {
 
     }
 
-    private static uk.org.siri.www.siri.QuayRefStructure.Builder map(uk.org.siri.siri20.QuayRefStructure quayRef) {
+    private static uk.org.siri.www.siri.QuayRefStructure.Builder map(uk.org.siri.siri21.QuayRefStructure quayRef) {
         uk.org.siri.www.siri.QuayRefStructure.Builder builder =  uk.org.siri.www.siri.QuayRefStructure.newBuilder();
         builder.setValue(quayRef.getValue());
         return builder;
     }
 
-    private static uk.org.siri.www.siri.RouteRefStructure map(uk.org.siri.siri20.RouteRefStructure routeRef) {
+    private static uk.org.siri.www.siri.RouteRefStructure map(uk.org.siri.siri21.RouteRefStructure routeRef) {
         uk.org.siri.www.siri.RouteRefStructure.Builder struct = uk.org.siri.www.siri.RouteRefStructure.newBuilder();
         struct.setValue(routeRef.getValue());
         return struct.build();
     }
 
-    private static uk.org.siri.www.siri.JourneyPatternRefStructure map(uk.org.siri.siri20.JourneyPatternRef monitoringRef) {
+    private static uk.org.siri.www.siri.JourneyPatternRefStructure map(uk.org.siri.siri21.JourneyPatternRef monitoringRef) {
         JourneyPatternRefStructure.Builder struct = JourneyPatternRefStructure.newBuilder();
         struct.setValue(monitoringRef.getValue());
         return struct.build();
     }
 
-    private static uk.org.siri.www.siri.MonitoringRefStructure.Builder map(uk.org.siri.siri20.MonitoringRefStructure monitoringRef) {
+    private static uk.org.siri.www.siri.MonitoringRefStructure.Builder map(uk.org.siri.siri21.MonitoringRefStructure monitoringRef) {
         uk.org.siri.www.siri.MonitoringRefStructure.Builder builder =  uk.org.siri.www.siri.MonitoringRefStructure.newBuilder();
         builder.setValue(monitoringRef.getValue());
         return builder;

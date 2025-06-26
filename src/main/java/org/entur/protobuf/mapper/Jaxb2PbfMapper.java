@@ -1,7 +1,7 @@
 package org.entur.protobuf.mapper;
 
 import org.entur.protobuf.mapper.siri.*;
-import uk.org.siri.siri20.*;
+import uk.org.siri.siri21.*;
 import uk.org.siri.www.siri.DataReadyRequestStructure;
 import uk.org.siri.www.siri.ServiceDeliveryType;
 import uk.org.siri.www.siri.SiriType;
@@ -25,7 +25,7 @@ class Jaxb2PbfMapper extends CommonMapper {
         return builder.build();
     }
 
-    private static DataReadyRequestStructure.Builder map(uk.org.siri.siri20.DataReadyRequestStructure dataReadyNotification) {
+    private static DataReadyRequestStructure.Builder map(uk.org.siri.siri21.DataReadyRequestStructure dataReadyNotification) {
         DataReadyRequestStructure.Builder builder = DataReadyRequestStructure.newBuilder();
         builder.setRequestTimestamp(map(dataReadyNotification.getRequestTimestamp()));
         return builder;

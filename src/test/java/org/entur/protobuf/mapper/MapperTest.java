@@ -1,12 +1,13 @@
 package org.entur.protobuf.mapper;
 
 import com.google.protobuf.util.JsonFormat;
+import org.entur.siri21.util.SiriXml;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.rutebanken.siri20.util.SiriXml;
-import uk.org.siri.siri20.DataReadyRequestStructure;
-import uk.org.siri.siri20.Siri;
+
+import uk.org.siri.siri21.DataReadyRequestStructure;
+import uk.org.siri.siri21.Siri;
 import uk.org.siri.www.siri.SiriType;
 
 import java.io.BufferedWriter;
@@ -16,8 +17,9 @@ import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 
 import static org.entur.protobuf.mapper.Helper.*;
+import static org.entur.siri21.util.SiriXml.parseXml;
 import static org.junit.Assert.assertEquals;
-import static org.rutebanken.siri20.util.SiriXml.parseXml;
+
 
 public class MapperTest {
 

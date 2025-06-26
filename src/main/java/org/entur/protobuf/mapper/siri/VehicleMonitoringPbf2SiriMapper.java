@@ -1,11 +1,11 @@
 package org.entur.protobuf.mapper.siri;
 
 
-import uk.org.siri.siri20.LocationStructure;
-import uk.org.siri.siri20.MonitoredCallStructure;
-import uk.org.siri.siri20.ProgressBetweenStopsStructure;
-import uk.org.siri.siri20.VehicleActivityStructure;
-import uk.org.siri.siri20.VehicleMonitoringDeliveryStructure;
+import uk.org.siri.siri21.LocationStructure;
+import uk.org.siri.siri21.MonitoredCallStructure;
+import uk.org.siri.siri21.ProgressBetweenStopsStructure;
+import uk.org.siri.siri21.VehicleActivityStructure;
+import uk.org.siri.siri21.VehicleMonitoringDeliveryStructure;
 import uk.org.siri.www.siri.NaturalLanguagePlaceNameStructure;
 import uk.org.siri.www.siri.NaturalLanguageStringStructure;
 import uk.org.siri.www.siri.VehicleModesEnumeration;

@@ -1,7 +1,8 @@
 package org.entur.protobuf.mapper;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import uk.org.siri.siri20.Siri;
+
+import uk.org.siri.siri21.Siri;
 import uk.org.siri.www.siri.SiriType;
 
 public class SiriMapper {

@@ -13,22 +13,22 @@ import uk.org.ifopt.siri20.CountryRefStructure;
 import uk.org.ifopt.siri20.IanaCountryTldEnumeration;
 import uk.org.ifopt.siri20.StopPlaceRef;
 import uk.org.ifopt.www.ifopt.StopPlaceRefStructure;
-import uk.org.siri.siri20.DataFrameRefStructure;
-import uk.org.siri.siri20.DatedVehicleJourneyRef;
-import uk.org.siri.siri20.DestinationRef;
-import uk.org.siri.siri20.GroupOfLinesRefStructure;
-import uk.org.siri.siri20.JourneyPatternRef;
-import uk.org.siri.siri20.LineRef;
-import uk.org.siri.siri20.LocationStructure;
-import uk.org.siri.siri20.RequestorRef;
-import uk.org.siri.siri20.RouteRefStructure;
-import uk.org.siri.siri20.ServiceFeatureRef;
-import uk.org.siri.siri20.SimpleContactStructure;
-import uk.org.siri.siri20.SituationRef;
-import uk.org.siri.siri20.SituationSimpleRef;
-import uk.org.siri.siri20.StopPointRef;
-import uk.org.siri.siri20.VehicleJourneyRef;
-import uk.org.siri.siri20.VehicleRef;
+import uk.org.siri.siri21.DataFrameRefStructure;
+import uk.org.siri.siri21.DatedVehicleJourneyRef;
+import uk.org.siri.siri21.DestinationRef;
+import uk.org.siri.siri21.GroupOfLinesRefStructure;
+import uk.org.siri.siri21.JourneyPatternRef;
+import uk.org.siri.siri21.LineRef;
+import uk.org.siri.siri21.LocationStructure;
+import uk.org.siri.siri21.RequestorRef;
+import uk.org.siri.siri21.RouteRefStructure;
+import uk.org.siri.siri21.ServiceFeatureRef;
+import uk.org.siri.siri21.SimpleContactStructure;
+import uk.org.siri.siri21.SituationRef;
+import uk.org.siri.siri21.SituationSimpleRef;
+import uk.org.siri.siri21.StopPointRefStructure;
+import uk.org.siri.siri21.VehicleJourneyRef;
+import uk.org.siri.siri21.VehicleRef;
 import uk.org.siri.www.siri.BlockRefStructure;
 import uk.org.siri.www.siri.DatedVehicleJourneyRefStructure;
 import uk.org.siri.www.siri.DestinationRefStructure;
@@ -44,7 +44,6 @@ import uk.org.siri.www.siri.ParticipantRefStructure;
 import uk.org.siri.www.siri.ServiceFeatureRefStructure;
 import uk.org.siri.www.siri.SituationRefStructure;
 import uk.org.siri.www.siri.SituationSimpleRefStructure;
-import uk.org.siri.www.siri.StopPointRefStructure;
 import uk.org.siri.www.siri.VehicleJourneyRefStructure;
 import uk.org.siri.www.siri.VehicleRefStructure;
 
@@ -139,14 +138,14 @@ public class CommonMapper extends EnumerationMapper{
         return mapped;
     }
 
-    protected static uk.org.siri.siri20.NaturalLanguageStringStructure map(NaturalLanguageStringStructure naturalLanguageStringStructure) {
-        uk.org.siri.siri20.NaturalLanguageStringStructure mapped = new uk.org.siri.siri20.NaturalLanguageStringStructure();
+    protected static uk.org.siri.siri21.NaturalLanguageStringStructure map(NaturalLanguageStringStructure naturalLanguageStringStructure) {
+        uk.org.siri.siri21.NaturalLanguageStringStructure mapped = new uk.org.siri.siri21.NaturalLanguageStringStructure();
         mapped.setLang(map(naturalLanguageStringStructure.getLang()));
         mapped.setValue(naturalLanguageStringStructure.getValue());
         return mapped;
     }
-    protected static uk.org.siri.siri20.NaturalLanguagePlaceNameStructure map(NaturalLanguagePlaceNameStructure naturalLanguagePlaceNameStructure) {
-        uk.org.siri.siri20.NaturalLanguagePlaceNameStructure mapped = new uk.org.siri.siri20.NaturalLanguagePlaceNameStructure();
+    protected static uk.org.siri.siri21.NaturalLanguagePlaceNameStructure map(NaturalLanguagePlaceNameStructure naturalLanguagePlaceNameStructure) {
+        uk.org.siri.siri21.NaturalLanguagePlaceNameStructure mapped = new uk.org.siri.siri21.NaturalLanguagePlaceNameStructure();
         if (naturalLanguagePlaceNameStructure != null) {
             mapped.setValue(naturalLanguagePlaceNameStructure.getValue());
             if (naturalLanguagePlaceNameStructure.getLang() != null ) {
@@ -164,7 +163,7 @@ public class CommonMapper extends EnumerationMapper{
     }
 
 
-    protected static uk.org.siri.www.siri.DefaultedTextStructure.Builder map(uk.org.siri.siri20.DefaultedTextStructure defaultedTextStructure) {
+    protected static uk.org.siri.www.siri.DefaultedTextStructure.Builder map(uk.org.siri.siri21.DefaultedTextStructure defaultedTextStructure) {
         final uk.org.siri.www.siri.DefaultedTextStructure.Builder builder = uk.org.siri.www.siri.DefaultedTextStructure.newBuilder();
         if (defaultedTextStructure != null) {
             builder.setValue(defaultedTextStructure.getValue());
@@ -176,8 +175,8 @@ public class CommonMapper extends EnumerationMapper{
     }
 
 
-    protected static uk.org.siri.siri20.DefaultedTextStructure map(uk.org.siri.www.siri.DefaultedTextStructure defaultedTextStructure) {
-        uk.org.siri.siri20.DefaultedTextStructure mapped = new uk.org.siri.siri20.DefaultedTextStructure();
+    protected static uk.org.siri.siri21.DefaultedTextStructure map(uk.org.siri.www.siri.DefaultedTextStructure defaultedTextStructure) {
+        uk.org.siri.siri21.DefaultedTextStructure mapped = new uk.org.siri.siri21.DefaultedTextStructure();
         if (defaultedTextStructure != null) {
             mapped.setValue(defaultedTextStructure.getValue());
             if (defaultedTextStructure.getLang() != null ) {
@@ -187,7 +186,7 @@ public class CommonMapper extends EnumerationMapper{
         return mapped;
     }
 
-    protected static NaturalLanguageStringStructure.Builder map(uk.org.siri.siri20.NaturalLanguageStringStructure naturalLanguageStringStructure) {
+    protected static NaturalLanguageStringStructure.Builder map(uk.org.siri.siri21.NaturalLanguageStringStructure naturalLanguageStringStructure) {
         final NaturalLanguageStringStructure.Builder builder = NaturalLanguageStringStructure.newBuilder();
         if (naturalLanguageStringStructure != null) {
             builder.setValue(naturalLanguageStringStructure.getValue());
@@ -198,7 +197,7 @@ public class CommonMapper extends EnumerationMapper{
         return builder;
     }
 
-    protected static NaturalLanguagePlaceNameStructure.Builder map(uk.org.siri.siri20.NaturalLanguagePlaceNameStructure originName) {
+    protected static NaturalLanguagePlaceNameStructure.Builder map(uk.org.siri.siri21.NaturalLanguagePlaceNameStructure originName) {
         if (originName != null && originName.getValue() != null) {
             final NaturalLanguagePlaceNameStructure.Builder builder = NaturalLanguagePlaceNameStructure.newBuilder();
 
@@ -215,26 +214,24 @@ public class CommonMapper extends EnumerationMapper{
         return LangType.valueOf("LANG_TYPE_" + lang.toUpperCase());
     }
 
-    protected static StopPointRefStructure.Builder map(StopPointRef stopPointRef) {
-        return StopPointRefStructure.newBuilder().setValue(stopPointRef.getValue());
-    }
+
 
     protected static StopPlaceRefStructure.Builder map(StopPlaceRef stopPlaceRef) {
         return StopPlaceRefStructure.newBuilder().setValue(stopPlaceRef.getValue());
     }
 
-    protected static StopPointRef map(StopPointRefStructure stopPointRef) {
-        StopPointRef mapped = new StopPointRef();
-        mapped.setValue(stopPointRef.getValue());
-        return mapped;
+    protected static uk.org.siri.www.siri.StopPointRefStructure.Builder map(StopPointRefStructure stopPointRef) {
+        uk.org.siri.www.siri.StopPointRefStructure.Builder build = uk.org.siri.www.siri.StopPointRefStructure.newBuilder();
+        build.setValue(stopPointRef.getValue());
+        return build;
     }
 
 
-    protected static OperatorRefStructure.Builder map(uk.org.siri.siri20.OperatorRefStructure operatorRef) {
+    protected static OperatorRefStructure.Builder map(uk.org.siri.siri21.OperatorRefStructure operatorRef) {
         return OperatorRefStructure.newBuilder().setValue(operatorRef.getValue());
     }
 
-    protected static DirectionRefStructure.Builder map(uk.org.siri.siri20.DirectionRefStructure directionRef) {
+    protected static DirectionRefStructure.Builder map(uk.org.siri.siri21.DirectionRefStructure directionRef) {
         DirectionRefStructure.Builder builder = DirectionRefStructure.newBuilder();
         builder.setValue(directionRef.getValue());
         return builder;
@@ -246,7 +243,7 @@ public class CommonMapper extends EnumerationMapper{
         return builder;
     }
 
-    protected static JourneyPlaceRefStructure.Builder map(uk.org.siri.siri20.JourneyPlaceRefStructure originRef) {
+    protected static JourneyPlaceRefStructure.Builder map(uk.org.siri.siri21.JourneyPlaceRefStructure originRef) {
         JourneyPlaceRefStructure.Builder builder = JourneyPlaceRefStructure.newBuilder();
         builder.setValue(originRef.getValue());
         return builder;
@@ -256,18 +253,18 @@ public class CommonMapper extends EnumerationMapper{
         return VehicleRefStructure.newBuilder().setValue(vehicleRef.getValue());
     }
 
-    protected static BlockRefStructure.Builder map(uk.org.siri.siri20.BlockRefStructure blockRef) {
+    protected static BlockRefStructure.Builder map(uk.org.siri.siri21.BlockRefStructure blockRef) {
         return BlockRefStructure.newBuilder().setValue(blockRef.getValue());
     }
 
-    protected static FramedVehicleJourneyRefStructure.Builder map(uk.org.siri.siri20.FramedVehicleJourneyRefStructure framedVehicleJourneyRef) {
+    protected static FramedVehicleJourneyRefStructure.Builder map(uk.org.siri.siri21.FramedVehicleJourneyRefStructure framedVehicleJourneyRef) {
         return FramedVehicleJourneyRefStructure.newBuilder()
                 .setDataFrameRef(map(framedVehicleJourneyRef.getDataFrameRef()))
                 .setDatedVehicleJourneyRef(framedVehicleJourneyRef.getDatedVehicleJourneyRef());
     }
 
-    protected static uk.org.siri.siri20.FramedVehicleJourneyRefStructure map(uk.org.siri.www.siri.FramedVehicleJourneyRefStructure framedVehicleJourneyRef) {
-        uk.org.siri.siri20.FramedVehicleJourneyRefStructure mapped = new uk.org.siri.siri20.FramedVehicleJourneyRefStructure();
+    protected static uk.org.siri.siri21.FramedVehicleJourneyRefStructure map(uk.org.siri.www.siri.FramedVehicleJourneyRefStructure framedVehicleJourneyRef) {
+        uk.org.siri.siri21.FramedVehicleJourneyRefStructure mapped = new uk.org.siri.siri21.FramedVehicleJourneyRefStructure();
         if (framedVehicleJourneyRef.hasDataFrameRef()) {
             mapped.setDataFrameRef(map(framedVehicleJourneyRef.getDataFrameRef()));
         }
@@ -295,20 +292,20 @@ public class CommonMapper extends EnumerationMapper{
         return mapped;
     }
 
-    protected static uk.org.siri.siri20.BlockRefStructure map(uk.org.siri.www.siri.BlockRefStructure blockRef) {
-        final uk.org.siri.siri20.BlockRefStructure mapped = new uk.org.siri.siri20.BlockRefStructure();
+    protected static uk.org.siri.siri21.BlockRefStructure map(uk.org.siri.www.siri.BlockRefStructure blockRef) {
+        final uk.org.siri.siri21.BlockRefStructure mapped = new uk.org.siri.siri21.BlockRefStructure();
         mapped.setValue(blockRef.getValue());
         return mapped;
     }
 
-    protected static uk.org.siri.siri20.OperatorRefStructure map(uk.org.siri.www.siri.OperatorRefStructure operatorRef) {
-        final uk.org.siri.siri20.OperatorRefStructure mapped = new uk.org.siri.siri20.OperatorRefStructure();
+    protected static uk.org.siri.siri21.OperatorRefStructure map(uk.org.siri.www.siri.OperatorRefStructure operatorRef) {
+        final uk.org.siri.siri21.OperatorRefStructure mapped = new uk.org.siri.siri21.OperatorRefStructure();
         mapped.setValue(operatorRef.getValue());
         return mapped;
     }
 
-    protected static uk.org.siri.siri20.DirectionRefStructure map(uk.org.siri.www.siri.DirectionRefStructure directionRef) {
-        final uk.org.siri.siri20.DirectionRefStructure mapped = new uk.org.siri.siri20.DirectionRefStructure();
+    protected static uk.org.siri.siri21.DirectionRefStructure map(uk.org.siri.www.siri.DirectionRefStructure directionRef) {
+        final uk.org.siri.siri21.DirectionRefStructure mapped = new uk.org.siri.siri21.DirectionRefStructure();
         mapped.setValue(directionRef.getValue());
         return mapped;
     }
@@ -363,8 +360,8 @@ public class CommonMapper extends EnumerationMapper{
         return mapped;
     }
 
-    protected static uk.org.siri.siri20.JourneyPlaceRefStructure map(uk.org.siri.www.siri.JourneyPlaceRefStructure originRef) {
-        final uk.org.siri.siri20.JourneyPlaceRefStructure mapped = new uk.org.siri.siri20.JourneyPlaceRefStructure();
+    protected static uk.org.siri.siri21.JourneyPlaceRefStructure map(uk.org.siri.www.siri.JourneyPlaceRefStructure originRef) {
+        final uk.org.siri.siri21.JourneyPlaceRefStructure mapped = new uk.org.siri.siri21.JourneyPlaceRefStructure();
         mapped.setValue(originRef.getValue());
         return mapped;
     }
