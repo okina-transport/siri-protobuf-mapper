@@ -212,7 +212,7 @@ public class CommonMapper extends EnumerationMapper{
     }
 
     private static LangType map(String lang) {
-        return LangType.valueOf("LANG_TYPE_" + lang.toUpperCase());
+        return LangType.valueOf("LANG_TYPE_" + lang.toUpperCase().split("-")[0]);
     }
 
     protected static StopPointRefStructure.Builder map(StopPointRef stopPointRef) {
