@@ -22,6 +22,10 @@
                         <StartTime>2022-12-09T14:11:00Z</StartTime>
                         <EndTime>2023-05-06T16:11:00Z</EndTime>
                     </ValidityPeriod>
+                    <EnvironmentReason>unknown</EnvironmentReason>
+                    <EquipmentReason>unknown</EquipmentReason>
+                    <PersonnelReason>unknown</PersonnelReason>
+                    <MiscellaneousReason>unknown</MiscellaneousReason>
                     <Severity>verySlight</Severity>
                     <ScopeType>line</ScopeType>
                     <ReportType>incident</ReportType>
