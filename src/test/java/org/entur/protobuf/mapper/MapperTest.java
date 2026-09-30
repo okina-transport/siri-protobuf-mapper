@@ -1,23 +1,18 @@
 package org.entur.protobuf.mapper;
 
 import com.google.protobuf.util.JsonFormat;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
-import org.rutebanken.siri20.util.SiriXml;
-import uk.org.siri.siri20.DataReadyRequestStructure;
-import uk.org.siri.siri20.Siri;
+import org.entur.siri21.util.SiriXml;
+import uk.org.siri.siri21.DataReadyRequestStructure;
+import uk.org.siri.siri21.Siri;
 import uk.org.siri.www.siri.SiriType;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 
 import static org.entur.protobuf.mapper.Helper.*;
 import static org.junit.Assert.assertEquals;
-import static org.rutebanken.siri20.util.SiriXml.parseXml;
+import static org.entur.siri21.util.SiriXml.parseXml;
 
 public class MapperTest {
 
@@ -104,17 +99,9 @@ public class MapperTest {
 
         parsedSiri = changeTimezoneOnDates(parsedSiri);
 
-        long t1 = System.currentTimeMillis();
         SiriType pbfSiri = mapper.mapToPbf(parsedSiri);
-        long t2 = System.currentTimeMillis();
-
-        JsonFormat.Printer jsonPrinter = JsonFormat.printer();
-
-        String json = jsonPrinter.print(pbfSiri);
-
-        long t3 = System.currentTimeMillis();
         Siri mappedSiri = mapper.mapToJaxb(pbfSiri);
-        long t4 = System.currentTimeMillis();
+
 
         final String mappedXmlContents = formatXml(mappedSiri, Boolean.TRUE);
         final String originalXmlContents = formatXml(parsedSiri, Boolean.TRUE);

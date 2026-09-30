@@ -1,11 +1,11 @@
 package org.entur.protobuf.mapper.siri;
 
 import org.w3c.dom.Element;
-import uk.org.acbs.siri20.AccessibilityLimitationStructure;
-import uk.org.ifopt.www.acsb.AccessibilityAssessmentStructure;
-import uk.org.ifopt.www.acsb.AccessibilityStructure;
-import uk.org.ifopt.www.ifopt.StopPlaceComponentRefStructure;
-import uk.org.siri.siri20.*;
+import uk.org.acbs.siri21.AccessibilityLimitationStructure;
+import uk.org.siri.www.siri.AccessibilityAssessmentStructure;
+import uk.org.siri.www.siri.AccessibilityStructure;
+import uk.org.siri.www.siri.StopPlaceComponentRefStructure;
+import uk.org.siri.siri21.*;
 import uk.org.siri.www.siri.AffectsScopeStructure;
 import uk.org.siri.www.siri.DatedVehicleJourneyRefStructure;
 import uk.org.siri.www.siri.EntryQualifierStructure;
@@ -23,7 +23,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public class SituationExchangeSiri2PbfMapper extends CommonMapper {
-    public static SituationExchangeDeliveryStructure.Builder map(uk.org.siri.siri20.SituationExchangeDeliveryStructure situationExchangeDeliveryStructure) {
+    public static SituationExchangeDeliveryStructure.Builder map(uk.org.siri.siri21.SituationExchangeDeliveryStructure situationExchangeDeliveryStructure) {
         SituationExchangeDeliveryStructure.Builder builder = SituationExchangeDeliveryStructure.newBuilder();
         if (situationExchangeDeliveryStructure.getSituations() != null) {
             builder.setSituations(map(situationExchangeDeliveryStructure.getSituations()));
@@ -34,7 +34,7 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static SituationExchangeDeliveryStructure.SituationsType.Builder map(uk.org.siri.siri20.SituationExchangeDeliveryStructure.Situations situations) {
+    private static SituationExchangeDeliveryStructure.SituationsType.Builder map(uk.org.siri.siri21.SituationExchangeDeliveryStructure.Situations situations) {
         SituationExchangeDeliveryStructure.SituationsType.Builder builder = SituationExchangeDeliveryStructure.SituationsType.newBuilder();
 
         final List<PtSituationElement> ptSituationElements = situations.getPtSituationElements();
@@ -133,77 +133,29 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         }
 
         if (ptSituationElement.getEquipmentReason() != null){
-            builder.setEquipmentReason(map(ptSituationElement.getEquipmentReason()));
+            builder.setEquipmentReason(ptSituationElement.getEquipmentReason());
         }
 
         if (ptSituationElement.getPersonnelReason() != null){
-            builder.setPersonnelReason(map(ptSituationElement.getPersonnelReason()));
+            builder.setPersonnelReason(ptSituationElement.getPersonnelReason());
         }
 
         if (ptSituationElement.getMiscellaneousReason() != null){
-            builder.setMiscellaneousReason(map(ptSituationElement.getMiscellaneousReason()));
+            builder.setMiscellaneousReason(ptSituationElement.getMiscellaneousReason());
         }
 
         if (ptSituationElement.getEnvironmentReason() != null){
-            builder.setEnvironmentReason(map(ptSituationElement.getEnvironmentReason()));
+            builder.setEnvironmentReason(ptSituationElement.getEnvironmentReason());
         }
 
         return builder;
     }
 
-    private static uk.org.siri.www.siri.EnvironmentReasonEnumeration map(EnvironmentReasonEnumeration environmentReason) {
 
-        switch (environmentReason){
-            case UNDEFINED_ENVIRONMENTAL_PROBLEM:
-                return uk.org.siri.www.siri.EnvironmentReasonEnumeration.ENVIRONMENT_REASON_ENUMERATION_UNDEFINED_ENVIRONMENTAL_PROBLEM;
-            default:
-                return uk.org.siri.www.siri.EnvironmentReasonEnumeration.ENVIRONMENT_REASON_ENUMERATION_UNKNOWN;
-        }
-    }
 
-    private static uk.org.siri.www.siri.MiscellaneousReasonEnumeration map(MiscellaneousReasonEnumeration miscellaneousReason) {
-        switch(miscellaneousReason){
-            case UNDEFINED_PROBLEM:
-                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_UNDEFINED_PROBLEM;
-            case DEMONSTRATION:
-                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_DEMONSTRATION;
-            case ACCIDENT:
-                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_ACCIDENT;
-            case HOLIDAY:
-                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_HOLIDAY;
-            case POLICE_ACTIVITY:
-                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_POLICE_ACTIVITY;
-            case INCIDENT:
-                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_INCIDENT;
-            default:
-                return uk.org.siri.www.siri.MiscellaneousReasonEnumeration.MISCELLANEOUS_REASON_ENUMERATION_UNKNOWN;
-        }
-    }
 
-    private static uk.org.siri.www.siri.PersonnelReasonEnumeration map(PersonnelReasonEnumeration personnelReason) {
 
-        switch(personnelReason){
-            case INDUSTRIAL_ACTION:
-                return uk.org.siri.www.siri.PersonnelReasonEnumeration.PERSONNEL_REASON_ENUMERATION_INDUSTRIAL_ACTION;
-            default :
-                return uk.org.siri.www.siri.PersonnelReasonEnumeration.PERSONNEL_REASON_ENUMERATION_UNKNOWN;
-        }
-    }
-
-    private static uk.org.siri.www.siri.EquipmentReasonEnumeration map(EquipmentReasonEnumeration equipmentReason) {
-        switch(equipmentReason){
-            case TECHNICAL_PROBLEM:
-                return uk.org.siri.www.siri.EquipmentReasonEnumeration.EQUIPMENT_REASON_ENUMERATION_TECHNICAL_PROBLEM;
-            case MAINTENANCE_WORK:
-                return uk.org.siri.www.siri.EquipmentReasonEnumeration.EQUIPMENT_REASON_ENUMERATION_MAINTENANCE_WORK;
-            case CONSTRUCTION_WORK:
-                return uk.org.siri.www.siri.EquipmentReasonEnumeration.EQUIPMENT_REASON_ENUMERATION_CONSTRUCTION_WORK;
-            default:
-                return uk.org.siri.www.siri.EquipmentReasonEnumeration.EQUIPMENT_REASON_ENUMERATION_UNKNOWN;
-        }
-    }
-
-    private static AffectsScopeStructure.Builder map(uk.org.siri.siri20.AffectsScopeStructure affects) {
+    private static AffectsScopeStructure.Builder map(uk.org.siri.siri21.AffectsScopeStructure affects) {
         AffectsScopeStructure.Builder builder = AffectsScopeStructure.newBuilder();
         if (affects.getNetworks() != null) {
             builder.setNetworks(map(affects.getNetworks()));
@@ -220,7 +172,7 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static AffectsScopeStructure.VehicleJourneysType.Builder map(uk.org.siri.siri20.AffectsScopeStructure.VehicleJourneys vehicleJourneys) {
+    private static AffectsScopeStructure.VehicleJourneysType.Builder map(uk.org.siri.siri21.AffectsScopeStructure.VehicleJourneys vehicleJourneys) {
         AffectsScopeStructure.VehicleJourneysType.Builder builder = AffectsScopeStructure.VehicleJourneysType.newBuilder();
         if (vehicleJourneys.getAffectedVehicleJourneies() != null) {
             for (AffectedVehicleJourneyStructure affectedVehicleJourney : vehicleJourneys.getAffectedVehicleJourneies()) {
@@ -275,7 +227,7 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return VehicleJourneyRefStructure.newBuilder().setValue(vehicleJourneyRef.getValue());
     }
 
-    private static AffectsScopeStructure.StopPointsType.Builder map(uk.org.siri.siri20.AffectsScopeStructure.StopPoints stopPoints) {
+    private static AffectsScopeStructure.StopPointsType.Builder map(uk.org.siri.siri21.AffectsScopeStructure.StopPoints stopPoints) {
         AffectsScopeStructure.StopPointsType.Builder builder = AffectsScopeStructure.StopPointsType.newBuilder();
         if (stopPoints.getAffectedStopPoints() != null) {
             for (AffectedStopPointStructure affectedStopPoint : stopPoints.getAffectedStopPoints()) {
@@ -286,7 +238,7 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static AffectsScopeStructure.StopPlacesType.Builder map(uk.org.siri.siri20.AffectsScopeStructure.StopPlaces stopPlaces) {
+    private static AffectsScopeStructure.StopPlacesType.Builder map(uk.org.siri.siri21.AffectsScopeStructure.StopPlaces stopPlaces) {
         AffectsScopeStructure.StopPlacesType.Builder builder = AffectsScopeStructure.StopPlacesType.newBuilder();
         if (stopPlaces.getAffectedStopPlaces() != null) {
             for (AffectedStopPlaceStructure affectedStopPlace : stopPlaces.getAffectedStopPlaces()) {
@@ -315,7 +267,7 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static AccessibilityAssessmentStructure.Builder map(uk.org.acbs.siri20.AccessibilityAssessmentStructure accessibilityAssessment) {
+    private static AccessibilityAssessmentStructure.Builder map(uk.org.acbs.siri21.AccessibilityAssessmentStructure accessibilityAssessment) {
         AccessibilityAssessmentStructure.Builder builder = AccessibilityAssessmentStructure.newBuilder();
         builder.setMobilityImpairedAccess(accessibilityAssessment.isMobilityImpairedAccess());
         if (accessibilityAssessment.getLimitations() != null) {
@@ -324,7 +276,7 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static AccessibilityAssessmentStructure.LimitationsType.Builder map(uk.org.acbs.siri20.AccessibilityAssessmentStructure.Limitations limitations) {
+    private static AccessibilityAssessmentStructure.LimitationsType.Builder map(uk.org.acbs.siri21.AccessibilityAssessmentStructure.Limitations limitations) {
         AccessibilityAssessmentStructure.LimitationsType.Builder builder = AccessibilityAssessmentStructure.LimitationsType.newBuilder();
         if (limitations.getAccessibilityLimitations() != null) {
             for (AccessibilityLimitationStructure accessibilityLimitation : limitations.getAccessibilityLimitations()) {
@@ -334,8 +286,8 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static uk.org.ifopt.www.acsb.AccessibilityLimitationStructure.Builder map(AccessibilityLimitationStructure accessibilityLimitation) {
-        uk.org.ifopt.www.acsb.AccessibilityLimitationStructure.Builder builder = uk.org.ifopt.www.acsb.AccessibilityLimitationStructure.newBuilder();
+    private static uk.org.siri.www.siri.AccessibilityLimitationStructure.Builder map(AccessibilityLimitationStructure accessibilityLimitation) {
+        uk.org.siri.www.siri.AccessibilityLimitationStructure.Builder builder = uk.org.siri.www.siri.AccessibilityLimitationStructure.newBuilder();
         if (accessibilityLimitation.getWheelchairAccess() != null) {
             builder.setWheelchairAccess(map(accessibilityLimitation.getWheelchairAccess()));
         }
@@ -351,7 +303,7 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static AccessibilityStructure.Builder map(uk.org.acbs.siri20.AccessibilityStructure accessibilityStructure) {
+    private static AccessibilityStructure.Builder map(uk.org.acbs.siri21.AccessibilityStructure accessibilityStructure) {
         return AccessibilityStructure.newBuilder().setValue(accessibilityStructure.getValue().value());
     }
 
@@ -379,14 +331,14 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static StopPlaceComponentRefStructure.Builder map(uk.org.ifopt.siri20.StopPlaceComponentRefStructure componentRef) {
+    private static StopPlaceComponentRefStructure.Builder map(uk.org.ifopt.siri21.StopPlaceComponentRefStructure componentRef) {
         return StopPlaceComponentRefStructure.newBuilder().setValue(componentRef.getValue());
     }
 
-    private static AffectsScopeStructure.NetworksType.Builder map(uk.org.siri.siri20.AffectsScopeStructure.Networks networks) {
+    private static AffectsScopeStructure.NetworksType.Builder map(uk.org.siri.siri21.AffectsScopeStructure.Networks networks) {
         AffectsScopeStructure.NetworksType.Builder builder = AffectsScopeStructure.NetworksType.newBuilder();
         if (networks.getAffectedNetworks() != null) {
-            for (uk.org.siri.siri20.AffectsScopeStructure.Networks.AffectedNetwork affectedNetwork : networks.getAffectedNetworks()) {
+            for (uk.org.siri.siri21.AffectsScopeStructure.Networks.AffectedNetwork affectedNetwork : networks.getAffectedNetworks()) {
                 builder.addAffectedNetwork(map(affectedNetwork));
             }
         }
@@ -394,7 +346,7 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static AffectsScopeStructure.NetworksType.AffectedNetworkType.Builder map(uk.org.siri.siri20.AffectsScopeStructure.Networks.AffectedNetwork affectedNetwork) {
+    private static AffectsScopeStructure.NetworksType.AffectedNetworkType.Builder map(uk.org.siri.siri21.AffectsScopeStructure.Networks.AffectedNetwork affectedNetwork) {
         AffectsScopeStructure.NetworksType.AffectedNetworkType.Builder builder = AffectsScopeStructure.NetworksType.AffectedNetworkType.newBuilder();
         if (affectedNetwork.getAffectedOperators() != null) {
             for (AffectedOperatorStructure affectedOperator : affectedNetwork.getAffectedOperators()) {
@@ -444,8 +396,8 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         if (affectedLine.getRoutes() != null) {
             builder.setRoutes(map(affectedLine.getRoutes()));
         }
-        if (affectedLine.getPublishedLineName() != null) {
-            builder.setPublishedLineName(map(affectedLine.getPublishedLineName()));
+        if (affectedLine.getPublishedLineNames() != null) {
+            affectedLine.getPublishedLineNames().forEach(item -> builder.addPublishedLineName(map(item)));
         }
         return builder;
     }
@@ -517,13 +469,13 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static RouteRefStructure.Builder map(uk.org.siri.siri20.RouteRefStructure routeRef) {
+    private static RouteRefStructure.Builder map(uk.org.siri.siri21.RouteRefStructure routeRef) {
         RouteRefStructure.Builder builder = RouteRefStructure.newBuilder();
         builder.setValue(routeRef.getValue());
         return builder;
     }
 
-    private static NetworkRefStructure.Builder map(uk.org.siri.siri20.NetworkRefStructure networkRef) {
+    private static NetworkRefStructure.Builder map(uk.org.siri.siri21.NetworkRefStructure networkRef) {
         NetworkRefStructure.Builder builder = NetworkRefStructure.newBuilder();
         builder.setValue(networkRef.getValue());
         return builder;
@@ -560,11 +512,12 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static ReportTypeEnumeration map(String reportType) {
-        if (reportType.equals("general")) {
-            return ReportTypeEnumeration.REPORT_TYPE_ENUMERATION_GENERAL;
-        } else if (reportType.equals("incident")) {
-            return ReportTypeEnumeration.REPORT_TYPE_ENUMERATION_INCIDENT;
+    private static ReportTypeEnumeration map(uk.org.siri.siri21.ReportTypeEnumeration reportType) {
+        switch (reportType) {
+            case GENERAL:
+                return ReportTypeEnumeration.REPORT_TYPE_ENUMERATION_GENERAL;
+            case INCIDENT:
+                return ReportTypeEnumeration.REPORT_TYPE_ENUMERATION_INCIDENT;
         }
         return null;
     }
@@ -581,13 +534,13 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
         return builder;
     }
 
-    private static SituationVersion.Builder map(uk.org.siri.siri20.SituationVersion version) {
+    private static SituationVersion.Builder map(uk.org.siri.siri21.SituationVersion version) {
         SituationVersion.Builder builder = SituationVersion.newBuilder();
         builder.setValue(version.getValue().intValue());
         return builder;
     }
 
-    private static SituationSourceStructure.Builder map(uk.org.siri.siri20.SituationSourceStructure source) {
+    private static SituationSourceStructure.Builder map(uk.org.siri.siri21.SituationSourceStructure source) {
         SituationSourceStructure.Builder builder = SituationSourceStructure.newBuilder();
         if (source.getSourceType() != null) {
             builder.setSourceType(map(source.getSourceType()));
@@ -651,8 +604,8 @@ public class SituationExchangeSiri2PbfMapper extends CommonMapper {
                 builder.addEasements(map(easement));
             }
         }
-        if (consequence.getPeriod() != null) {
-            builder.setPeriod(map(consequence.getPeriod()));
+        if (consequence.getPeriods() != null) {
+            consequence.getPeriods().forEach(item -> builder.addPeriod(map(item)));
         }
         if (consequence.getSeverity() != null) {
             builder.setSeverity(map(consequence.getSeverity()));

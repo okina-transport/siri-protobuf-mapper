@@ -1,7 +1,7 @@
 package org.entur.protobuf.mapper.siri;
 
-import uk.org.siri.siri20.NaturalLanguageStringStructure;
-import uk.org.siri.siri20.VehicleModesEnumeration;
+import uk.org.siri.siri21.NaturalLanguageStringStructure;
+import uk.org.siri.siri21.VehicleModesEnumeration;
 import uk.org.siri.www.siri.VehicleMonitoringRefStructure;
 import uk.org.siri.www.siri.MonitoredCallStructure;
 import uk.org.siri.www.siri.PreviousCallStructure;
@@ -13,7 +13,7 @@ import uk.org.siri.www.siri.VehicleMonitoringDeliveryStructure;
 import java.util.List;
 
 public class VehicleMonitoringSiri2PbfMapper extends CommonMapper{
-    public static VehicleMonitoringDeliveryStructure.Builder map(uk.org.siri.siri20.VehicleMonitoringDeliveryStructure deliveryStructure) {
+    public static VehicleMonitoringDeliveryStructure.Builder map(uk.org.siri.siri21.VehicleMonitoringDeliveryStructure deliveryStructure) {
         VehicleMonitoringDeliveryStructure.Builder  builder = VehicleMonitoringDeliveryStructure.newBuilder();
 
         if (deliveryStructure.getVersion() != null) {
@@ -22,16 +22,16 @@ public class VehicleMonitoringSiri2PbfMapper extends CommonMapper{
         if (deliveryStructure.getResponseTimestamp() != null) {
             builder.setResponseTimestamp(map(deliveryStructure.getResponseTimestamp()));
         }
-        final List<uk.org.siri.siri20.VehicleActivityStructure> vehicleActivities = deliveryStructure.getVehicleActivities();
+        final List<uk.org.siri.siri21.VehicleActivityStructure> vehicleActivities = deliveryStructure.getVehicleActivities();
         if (vehicleActivities != null) {
-            for (uk.org.siri.siri20.VehicleActivityStructure vehicleActivity : vehicleActivities) {
+            for (uk.org.siri.siri21.VehicleActivityStructure vehicleActivity : vehicleActivities) {
                 builder.addVehicleActivity(map(vehicleActivity));
             }
         }
         return builder;
     }
 
-    private static VehicleActivityStructure.Builder map(uk.org.siri.siri20.VehicleActivityStructure vehicleActivity) {
+    private static VehicleActivityStructure.Builder map(uk.org.siri.siri21.VehicleActivityStructure vehicleActivity) {
         VehicleActivityStructure.Builder builder = VehicleActivityStructure.newBuilder();
         if (vehicleActivity.getRecordedAtTime() != null) {
             builder.setRecordedAtTime(map(vehicleActivity.getRecordedAtTime()));
@@ -54,7 +54,7 @@ public class VehicleMonitoringSiri2PbfMapper extends CommonMapper{
         return builder;
     }
 
-    private static ProgressBetweenStopsStructure.Builder map(uk.org.siri.siri20.ProgressBetweenStopsStructure progressBetweenStops) {
+    private static ProgressBetweenStopsStructure.Builder map(uk.org.siri.siri21.ProgressBetweenStopsStructure progressBetweenStops) {
         ProgressBetweenStopsStructure.Builder builder = ProgressBetweenStopsStructure.newBuilder();
         if (progressBetweenStops.getLinkDistance() != null) {
             builder.setLinkDistance(progressBetweenStops.getLinkDistance().doubleValue());
@@ -65,7 +65,7 @@ public class VehicleMonitoringSiri2PbfMapper extends CommonMapper{
         return builder;
     }
 
-    private static VehicleMonitoringRefStructure.Builder map(uk.org.siri.siri20.VehicleMonitoringRefStructure vehicleMonitoringRef) {
+    private static VehicleMonitoringRefStructure.Builder map(uk.org.siri.siri21.VehicleMonitoringRefStructure vehicleMonitoringRef) {
         VehicleMonitoringRefStructure.Builder builder = VehicleMonitoringRefStructure.newBuilder();
         if (vehicleMonitoringRef.getValue() != null) {
             builder.setValue(vehicleMonitoringRef.getValue());
@@ -73,7 +73,7 @@ public class VehicleMonitoringSiri2PbfMapper extends CommonMapper{
         return builder;
     }
 
-    private static VehicleActivityStructure.MonitoredVehicleJourneyType.Builder map(uk.org.siri.siri20.VehicleActivityStructure.MonitoredVehicleJourney monitoredVehicleJourney) {
+    private static VehicleActivityStructure.MonitoredVehicleJourneyType.Builder map(uk.org.siri.siri21.VehicleActivityStructure.MonitoredVehicleJourney monitoredVehicleJourney) {
         VehicleActivityStructure.MonitoredVehicleJourneyType.Builder builder = VehicleActivityStructure.MonitoredVehicleJourneyType.newBuilder();
         if (monitoredVehicleJourney.getLineRef() != null) {
             builder.setLineRef(map(monitoredVehicleJourney.getLineRef()));
@@ -93,7 +93,7 @@ public class VehicleMonitoringSiri2PbfMapper extends CommonMapper{
             builder.setOriginRef(map(monitoredVehicleJourney.getOriginRef()));
         }
         if (monitoredVehicleJourney.getOriginNames() != null) {
-            for (uk.org.siri.siri20.NaturalLanguagePlaceNameStructure name : monitoredVehicleJourney.getOriginNames()) {
+            for (uk.org.siri.siri21.NaturalLanguagePlaceNameStructure name : monitoredVehicleJourney.getOriginNames()) {
                 builder.addOriginName(map(name));
             }
         }
@@ -161,7 +161,7 @@ public class VehicleMonitoringSiri2PbfMapper extends CommonMapper{
         return builder;
     }
 
-    private static MonitoredCallStructure.Builder map(uk.org.siri.siri20.MonitoredCallStructure call) {
+    private static MonitoredCallStructure.Builder map(uk.org.siri.siri21.MonitoredCallStructure call) {
         MonitoredCallStructure.Builder builder = MonitoredCallStructure.newBuilder();
         if (call.getAimedArrivalTime() != null) {
             builder.setAimedArrivalTime(map(call.getAimedArrivalTime()));
@@ -207,15 +207,15 @@ public class VehicleMonitoringSiri2PbfMapper extends CommonMapper{
     }
 
 
-    private static PreviousCallsStructure.Builder map(uk.org.siri.siri20.PreviousCallsStructure previousCalls) {
+    private static PreviousCallsStructure.Builder map(uk.org.siri.siri21.PreviousCallsStructure previousCalls) {
         PreviousCallsStructure.Builder builder = PreviousCallsStructure.newBuilder();
-        for (uk.org.siri.siri20.PreviousCallStructure call : previousCalls.getPreviousCalls()) {
+        for (uk.org.siri.siri21.PreviousCallStructure call : previousCalls.getPreviousCalls()) {
             builder.addPreviousCall(map(call));
         }
         return builder;
     }
 
-    private static PreviousCallStructure.Builder map(uk.org.siri.siri20.PreviousCallStructure call) {
+    private static PreviousCallStructure.Builder map(uk.org.siri.siri21.PreviousCallStructure call) {
         PreviousCallStructure.Builder builder = PreviousCallStructure.newBuilder();
         if (call.getAimedArrivalTime() != null) {
             builder.setAimedArrivalTime(map(call.getAimedArrivalTime()));
